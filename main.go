@@ -7,8 +7,6 @@ import (
 	"os"
 	"strings"
 
-	//"strings"
-
 	"github.com/PuerkitoBio/goquery"
 )
 
@@ -18,6 +16,7 @@ type Game struct {
 	Link        string `json:"link"`
 	Price       string `json:"price"`
 	ReleaseDate string `json:"release_date"`
+	Reviews     string `json:"reviews"`
 }
 
 func main() {
@@ -71,7 +70,7 @@ func main() {
 	defer csvWriter.Flush()
 
 	// Write CSV header
-	err = csvWriter.Write([]string{"Title", "Link", "Price", "Release Date"})
+	err = csvWriter.Write([]string{"Title", "Link", "Price", "Release Date", "Reviews"})
 	if err != nil {
 		fmt.Println("Error writing CSV header:", err)
 		return
@@ -79,7 +78,7 @@ func main() {
 
 	// Write game data to CSV
 	for _, game := range games {
-		err := csvWriter.Write([]string{game.Title, game.Link, game.Price, game.ReleaseDate})
+		err := csvWriter.Write([]string{game.Title, game.Link, game.Price, game.ReleaseDate, game.Reviews})
 		if err != nil {
 			fmt.Println("Error writing CSV record:", err)
 			return
@@ -88,6 +87,7 @@ func main() {
 
 	fmt.Println("CSV file created successfully.")
 }
+
 func scrapePage(url string) ([]Game, error) {
 	doc, err := goquery.NewDocument(url)
 	if err != nil {
@@ -95,20 +95,38 @@ func scrapePage(url string) ([]Game, error) {
 	}
 
 	var games []Game
-	doc.Find(".search_result_row").Each(func(i int, s *goquery.Selection) {
+	doc.Find("#search_resultsRows > a").Each(func(i int, s *goquery.Selection) {
 		title := s.Find(".title").Text()
-		link, _ := s.Find(".search_name a").Attr("href")
-		price := s.Find(".search_price").Text()
+		link, _ := s.Attr("href") // Extract link directly from the anchor tag
+		price := s.Find(".col.search_price_discount_combined .discount_final_price").Text()
 		releaseDate := s.Find(".search_released").Text()
+
+		// Extract review summary
+		reviewsSummary := ""
+		if tooltipHTML, exists := s.Find(".search_review_summary").Attr("data-tooltip-html"); exists {
+			// Split the HTML string by the <br> tag
+			parts := strings.Split(tooltipHTML, "<br>")
+			if len(parts) > 0 {
+				// Extract only the first part
+				reviewsSummary = strings.TrimSpace(parts[0])
+			}
+		}
 
 		game := Game{
 			Title:       strings.TrimSpace(title),
 			Link:        link,
 			Price:       strings.TrimSpace(price),
 			ReleaseDate: strings.TrimSpace(releaseDate),
+			Reviews:     reviewsSummary,
 		}
 		games = append(games, game)
 	})
 
 	return games, nil
 }
+
+
+
+
+
+
