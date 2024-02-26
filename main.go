@@ -4,6 +4,7 @@ import (
 	"encoding/csv"
 	"encoding/json"
 	"fmt"
+	"net/http"
 	"os"
 	"strings"
 
@@ -12,21 +13,41 @@ import (
 
 // Game struct represents the data structure for each game
 type Game struct {
-	Title       string `json:"title"`
-	Link        string `json:"link"`
-	Price       string `json:"price"`
-	ReleaseDate string `json:"release_date"`
-	Reviews     string `json:"reviews"`
+    Title       string   `json:"title"`
+    Link        string   `json:"link"`
+    Price       string   `json:"price"`
+    ReleaseDate string   `json:"release_date"`
+    Reviews     string   `json:"reviews"`
+    Tags        []string `json:"tags"`
 }
 
+
+// TagsMap represents the structure of the tags JSON file
+type TagsMap map[string]string
+
 func main() {
+	// Load tags data from JSON file
+	tagsFile, err := os.Open("data/tags.json")
+	if err != nil {
+		fmt.Println("Error opening tags file:", err)
+		return
+	}
+	defer tagsFile.Close()
+
+	var tags TagsMap
+	err = json.NewDecoder(tagsFile).Decode(&tags)
+	if err != nil {
+		fmt.Println("Error decoding tags JSON:", err)
+		return
+	}
+
 	// Get game keyword input from user
 	var gameKeyword string
 	fmt.Print("Enter the game keyword you want to search: ")
 	fmt.Scanln(&gameKeyword)
 
 	// Create a folder to hold the extracted files
-	err := os.Mkdir("resultfiles", 0755)
+	err = os.Mkdir("resultfiles", 0755)
 	if err != nil && !os.IsExist(err) {
 		fmt.Println("Error creating folder:", err)
 		return
@@ -34,7 +55,7 @@ func main() {
 
 	// Scrape data from the first page
 	url := fmt.Sprintf("https://store.steampowered.com/search/?term=%s", gameKeyword)
-	games, err := scrapePage(url)
+	games, err := scrapePage(url, tags)
 	if err != nil {
 		fmt.Println("Error scraping page:", err)
 		return
@@ -70,7 +91,7 @@ func main() {
 	defer csvWriter.Flush()
 
 	// Write CSV header
-	err = csvWriter.Write([]string{"Title", "Link", "Price", "Release Date", "Reviews"})
+	err = csvWriter.Write([]string{"Title", "Link", "Price", "Release Date", "Reviews", "Tags"})
 	if err != nil {
 		fmt.Println("Error writing CSV header:", err)
 		return
@@ -78,7 +99,9 @@ func main() {
 
 	// Write game data to CSV
 	for _, game := range games {
-		err := csvWriter.Write([]string{game.Title, game.Link, game.Price, game.ReleaseDate, game.Reviews})
+		// Combine tags into a single string
+		tagsStr := strings.Join(game.Tags, ", ")
+		err := csvWriter.Write([]string{game.Title, game.Link, game.Price, game.ReleaseDate, game.Reviews, tagsStr})
 		if err != nil {
 			fmt.Println("Error writing CSV record:", err)
 			return
@@ -87,46 +110,62 @@ func main() {
 
 	fmt.Println("CSV file created successfully.")
 }
+func scrapePage(url string, tags TagsMap) ([]Game, error) {
+    // Make HTTP request
+    resp, err := http.Get(url)
+    if err != nil {
+        return nil, fmt.Errorf("failed to make HTTP request: %v", err)
+    }
+    defer resp.Body.Close()
 
-func scrapePage(url string) ([]Game, error) {
-	doc, err := goquery.NewDocument(url)
-	if err != nil {
-		return nil, err
-	}
+    // Check if response status code is OK (200)
+    if resp.StatusCode != http.StatusOK {
+        return nil, fmt.Errorf("HTTP request failed with status code: %d", resp.StatusCode)
+    }
 
-	var games []Game
-	doc.Find("#search_resultsRows > a").Each(func(i int, s *goquery.Selection) {
-		title := s.Find(".title").Text()
-		link, _ := s.Attr("href") // Extract link directly from the anchor tag
-		price := s.Find(".col.search_price_discount_combined .discount_final_price").Text()
-		releaseDate := s.Find(".search_released").Text()
+    // Parse HTML document
+    doc, err := goquery.NewDocumentFromReader(resp.Body)
+    if err != nil {
+        return nil, fmt.Errorf("failed to parse HTML document: %v", err)
+    }
 
-		// Extract review summary
-		reviewsSummary := ""
-		if tooltipHTML, exists := s.Find(".search_review_summary").Attr("data-tooltip-html"); exists {
-			// Split the HTML string by the <br> tag
-			parts := strings.Split(tooltipHTML, "<br>")
-			if len(parts) > 0 {
-				// Extract only the first part
-				reviewsSummary = strings.TrimSpace(parts[0])
-			}
-		}
+    var games []Game
+    doc.Find("#search_resultsRows > a").Each(func(i int, s *goquery.Selection) {
+        title := s.Find(".title").Text()
+        link, _ := s.Attr("href") // Extract link directly from the anchor tag
+        price := s.Find(".col.search_price_discount_combined .discount_final_price").Text()
+        releaseDate := s.Find(".search_released").Text()
 
-		game := Game{
-			Title:       strings.TrimSpace(title),
-			Link:        link,
-			Price:       strings.TrimSpace(price),
-			ReleaseDate: strings.TrimSpace(releaseDate),
-			Reviews:     reviewsSummary,
-		}
-		games = append(games, game)
-	})
+        // Extract review summary
+        reviewsSummary := ""
+        if tooltipHTML, exists := s.Find(".search_review_summary").Attr("data-tooltip-html"); exists {
+            // Split the HTML string by the <br> tag
+            parts := strings.Split(tooltipHTML, "<br>")
+            if len(parts) > 0 {
+                // Extract only the first part
+                reviewsSummary = strings.TrimSpace(parts[0])
+            }
+        }
 
-	return games, nil
+        // Extract tag IDs from HTML
+        tagIDsStr, _ := s.Attr("data-ds-tagids")
+        tagIDs := strings.Split(strings.Trim(tagIDsStr, "[]"), ",")
+
+        // Debug print for tag IDs extracted from HTML
+        fmt.Println("Tag IDs from HTML for", title, ":", tagIDs)
+
+        // Assign tag IDs directly to the game's Tags field
+        game := Game{
+            Title:       strings.TrimSpace(title),
+            Link:        link,
+            Price:       strings.TrimSpace(price),
+            ReleaseDate: strings.TrimSpace(releaseDate),
+            Reviews:     reviewsSummary,
+            Tags:        tagIDs, // Assign tag IDs directly
+        }
+
+        games = append(games, game)
+    })
+
+    return games, nil
 }
-
-
-
-
-
-

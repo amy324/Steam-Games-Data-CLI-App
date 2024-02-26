@@ -4,349 +4,746 @@
     "link": "https://store.steampowered.com/app/379720/DOOM/?snr=1_7_7_151_150_1",
     "price": "£3.19",
     "release_date": "12 May, 2016",
-    "reviews": "Overwhelmingly Positive"
+    "reviews": "Overwhelmingly Positive",
+    "tags": [
+      "1663",
+      "4345",
+      "19",
+      "1774",
+      "9541",
+      "1756",
+      "3839"
+    ]
   },
   {
     "title": "DOOM Eternal",
     "link": "https://store.steampowered.com/app/782330/DOOM_Eternal/?snr=1_7_7_151_150_1",
     "price": "£6.99",
     "release_date": "19 Mar, 2020",
-    "reviews": "Very Positive"
+    "reviews": "Very Positive",
+    "tags": [
+      "19",
+      "1663",
+      "4345",
+      "1756",
+      "1734",
+      "9541",
+      "4667"
+    ]
   },
   {
     "title": "DOOM 3",
     "link": "https://store.steampowered.com/app/208200/DOOM_3/?snr=1_7_7_151_150_1",
     "price": "£3.19",
     "release_date": "18 Oct, 2012",
-    "reviews": "Very Positive"
+    "reviews": "Very Positive",
+    "tags": [
+      "1663",
+      "1667",
+      "19",
+      "1774",
+      "1693",
+      "3942",
+      "3839"
+    ]
   },
   {
     "title": "DOOM (1993)",
     "link": "https://store.steampowered.com/app/2280/DOOM_1993/?snr=1_7_7_151_150_1",
     "price": "£1.31",
     "release_date": "3 Aug, 2007",
-    "reviews": "Overwhelmingly Positive"
+    "reviews": "Overwhelmingly Positive",
+    "tags": [
+      "1663",
+      "1693",
+      "19",
+      "6691",
+      "4004",
+      "1756",
+      "3916"
+    ]
   },
   {
     "title": "DOOM II",
     "link": "https://store.steampowered.com/app/2300/DOOM_II/?snr=1_7_7_151_150_1",
     "price": "£1.31",
     "release_date": "3 Aug, 2007",
-    "reviews": "Overwhelmingly Positive"
-  },
-  {
-    "title": "DOOM 64",
-    "link": "https://store.steampowered.com/app/1148590/DOOM_64/?snr=1_7_7_151_150_1",
-    "price": "£1.31",
-    "release_date": "19 Mar, 2020",
-    "reviews": "Very Positive"
+    "reviews": "Overwhelmingly Positive",
+    "tags": [
+      "1693",
+      "1663",
+      "19",
+      "6691",
+      "4004",
+      "1774",
+      "9541"
+    ]
   },
   {
     "title": "DOOM Franchise Bundle",
     "link": "https://store.steampowered.com/bundle/15366/DOOM_Franchise_Bundle/?snr=1_7_7_151_150_1",
     "price": "£22.32",
     "release_date": "",
-    "reviews": "Very Positive"
+    "reviews": "Very Positive",
+    "tags": [
+      "1663",
+      "19",
+      "1693",
+      "1774",
+      "4345",
+      "6691",
+      "9541"
+    ]
+  },
+  {
+    "title": "DOOM 64",
+    "link": "https://store.steampowered.com/app/1148590/DOOM_64/?snr=1_7_7_151_150_1",
+    "price": "£1.31",
+    "release_date": "19 Mar, 2020",
+    "reviews": "Very Positive",
+    "tags": [
+      "19",
+      "1663",
+      "1693",
+      "6691",
+      "4004",
+      "4345",
+      "1774"
+    ]
   },
   {
     "title": "DOOM VFR",
     "link": "https://store.steampowered.com/app/650000/DOOM_VFR/?snr=1_7_7_151_150_1",
     "price": "£3.24",
     "release_date": "30 Nov, 2017",
-    "reviews": "Mixed"
+    "reviews": "Mixed",
+    "tags": [
+      "21978",
+      "19",
+      "1663",
+      "4345",
+      "4667",
+      "1774",
+      "4182"
+    ]
   },
   {
     "title": "DOOM Soundtrack",
     "link": "https://store.steampowered.com/app/1195480/DOOM_Soundtrack/?snr=1_7_7_151_150_1",
     "price": "£3.99",
     "release_date": "11 Feb, 2020",
-    "reviews": "Very Positive"
-  },
-  {
-    "title": "DOOM Classic Bundle",
-    "link": "https://store.steampowered.com/bundle/27490/DOOM_Classic_Bundle/?snr=1_7_7_151_150_1",
-    "price": "£5.33",
-    "release_date": "",
-    "reviews": "Very Positive"
+    "reviews": "Very Positive",
+    "tags": [
+      "19",
+      "7948",
+      "1756"
+    ]
   },
   {
     "title": "Doom Sweeper",
     "link": "https://store.steampowered.com/app/2162680/Doom_Sweeper/?snr=1_7_7_151_150_1",
     "price": "£4.29",
     "release_date": "6 Dec, 2023",
-    "reviews": "Mostly Positive"
+    "reviews": "Mostly Positive",
+    "tags": [
+      "493",
+      "42804",
+      "1646",
+      "615955",
+      "3959",
+      "1645",
+      "1716"
+    ]
   },
   {
     "title": "Road Doom",
     "link": "https://store.steampowered.com/app/792860/Road_Doom/?snr=1_7_7_151_150_1",
     "price": "£3.21",
     "release_date": "17 Aug, 2018",
-    "reviews": "Positive"
+    "reviews": "Positive",
+    "tags": [
+      "492",
+      "597",
+      "19",
+      "4885",
+      "4255",
+      "7481",
+      "1773"
+    ]
   },
   {
-    "title": "ULTRAKILL",
-    "link": "https://store.steampowered.com/app/1229490/ULTRAKILL/?snr=1_7_7_151_150_1",
-    "price": "£14.69",
-    "release_date": "3 Sep, 2020",
-    "reviews": "Overwhelmingly Positive"
+    "title": "DOOM Classic Bundle",
+    "link": "https://store.steampowered.com/bundle/27490/DOOM_Classic_Bundle/?snr=1_7_7_151_150_1",
+    "price": "£5.33",
+    "release_date": "",
+    "reviews": "Very Positive",
+    "tags": [
+      "1663",
+      "19",
+      "1693",
+      "6691",
+      "4004",
+      "1774",
+      "1667"
+    ]
   },
   {
     "title": "Doom Work",
     "link": "https://store.steampowered.com/app/1745800/Doom_Work/?snr=1_7_7_151_150_1",
     "price": "£1.69",
     "release_date": "30 Sep, 2021",
-    "reviews": "Positive"
+    "reviews": "Positive",
+    "tags": [
+      "17337",
+      "1664",
+      "9",
+      "3964",
+      "597",
+      "4182",
+      "1698"
+    ]
   },
   {
     "title": "DOOM TOMB",
     "link": "https://store.steampowered.com/app/1893050/DOOM_TOMB/?snr=1_7_7_151_150_1",
     "price": "Free",
     "release_date": "22 Mar, 2022",
-    "reviews": "Positive"
+    "reviews": "Positive",
+    "tags": [
+      "19",
+      "5055",
+      "4191",
+      "1697",
+      "4342",
+      "1667",
+      "4057"
+    ]
   },
   {
     "title": "SILENT DOOM",
     "link": "https://store.steampowered.com/app/983680/SILENT_DOOM/?snr=1_7_7_151_150_1",
     "price": "",
     "release_date": "Coming soon",
-    "reviews": ""
+    "reviews": "",
+    "tags": [
+      "19",
+      "21",
+      "492",
+      "1667",
+      "493",
+      "4345",
+      "4667"
+    ]
   },
   {
     "title": "Doom Survivors",
     "link": "https://store.steampowered.com/app/2746830/Doom_Survivors/?snr=1_7_7_151_150_1",
     "price": "",
     "release_date": "Coming soon",
-    "reviews": ""
+    "reviews": "",
+    "tags": [
+      "42804",
+      "4885",
+      "3959",
+      "4231",
+      "1716",
+      "122",
+      "4182"
+    ]
+  },
+  {
+    "title": "ULTRAKILL",
+    "link": "https://store.steampowered.com/app/1229490/ULTRAKILL/?snr=1_7_7_151_150_1",
+    "price": "£14.69",
+    "release_date": "3 Sep, 2020",
+    "reviews": "Overwhelmingly Positive",
+    "tags": [
+      "493",
+      "1023537",
+      "3955",
+      "1734",
+      "1663",
+      "5228",
+      "4777"
+    ]
   },
   {
     "title": "DoomBreaker",
     "link": "https://store.steampowered.com/app/1602520/DoomBreaker/?snr=1_7_7_151_150_1",
     "price": "",
     "release_date": "To be announced",
-    "reviews": ""
-  },
-  {
-    "title": "Hand of Doom",
-    "link": "https://store.steampowered.com/app/1924400/Hand_of_Doom/?snr=1_7_7_151_150_1",
-    "price": "£8.50",
-    "release_date": "16 May, 2023",
-    "reviews": "Very Positive"
+    "reviews": "",
+    "tags": [
+      "19",
+      "21",
+      "9",
+      "4736",
+      "4106",
+      "1773",
+      "1625"
+    ]
   },
   {
     "title": "Kingdom of Doom",
     "link": "https://store.steampowered.com/app/2717440/Kingdom_of_Doom/?snr=1_7_7_151_150_1",
     "price": "",
     "release_date": "Coming soon",
-    "reviews": ""
+    "reviews": "",
+    "tags": [
+      "21",
+      "122",
+      "29482",
+      "19",
+      "4106",
+      "4231",
+      "5395"
+    ]
+  },
+  {
+    "title": "Hand of Doom",
+    "link": "https://store.steampowered.com/app/1924400/Hand_of_Doom/?snr=1_7_7_151_150_1",
+    "price": "£8.50",
+    "release_date": "16 May, 2023",
+    "reviews": "Very Positive",
+    "tags": [
+      "122",
+      "21",
+      "4106",
+      "3834",
+      "4191",
+      "3839",
+      "18594"
+    ]
   },
   {
     "title": "Doom \u0026 Destiny",
     "link": "https://store.steampowered.com/app/318130/Doom__Destiny/?snr=1_7_7_151_150_1",
     "price": "£8.99",
     "release_date": "18 Mar, 2015",
-    "reviews": "Overwhelmingly Positive"
+    "reviews": "Overwhelmingly Positive",
+    "tags": [
+      "122",
+      "492",
+      "5577",
+      "4325",
+      "1719",
+      "1684",
+      "9"
+    ]
   },
   {
     "title": "Skin - Doom Bringer",
     "link": "https://store.steampowered.com/app/463590/Skin__Doom_Bringer/?snr=1_7_7_151_150_1",
     "price": "£4.29",
     "release_date": "21 Apr, 2016",
-    "reviews": "Positive"
+    "reviews": "Positive",
+    "tags": [
+      "19",
+      "21",
+      "122",
+      "128",
+      "492"
+    ]
   },
   {
     "title": "Cute and Doom",
     "link": "https://store.steampowered.com/bundle/27129/Cute_and_Doom/?snr=1_7_7_151_150_1",
     "price": "£26.58",
     "release_date": "",
-    "reviews": "Very Positive"
+    "reviews": "Very Positive",
+    "tags": [
+      "3964",
+      "1667",
+      "4085",
+      "3871",
+      "5577",
+      "1628",
+      "21"
+    ]
   },
   {
     "title": "Gloom and Doom",
     "link": "https://store.steampowered.com/app/1372800/Gloom_and_Doom/?snr=1_7_7_151_150_1",
     "price": "£15.49",
     "release_date": "17 Jan, 2021",
-    "reviews": "Positive"
+    "reviews": "Positive",
+    "tags": [
+      "4486",
+      "1684",
+      "1667",
+      "597",
+      "11014",
+      "3799",
+      "1721"
+    ]
   },
   {
     "title": "Tunnel of Doom",
     "link": "https://store.steampowered.com/app/1361840/Tunnel_of_Doom/?snr=1_7_7_151_150_1",
     "price": "£10.99",
     "release_date": "23 Nov, 2021",
-    "reviews": "Mixed"
+    "reviews": "Mixed",
+    "tags": [
+      "42804",
+      "1720",
+      "1645",
+      "3959",
+      "1759",
+      "4231",
+      "4106"
+    ]
   },
   {
     "title": "Ski Doom VR",
     "link": "https://store.steampowered.com/app/1358630/Ski_Doom_VR/?snr=1_7_7_151_150_1",
     "price": "Free",
     "release_date": "13 Aug, 2020",
-    "reviews": "Mostly Positive"
+    "reviews": "Mostly Positive",
+    "tags": [
+      "701",
+      "492",
+      "1773",
+      "5125",
+      "1662",
+      "5395",
+      "3968"
+    ]
   },
   {
     "title": "Shroom \u0026 Doom",
     "link": "https://store.steampowered.com/app/2491690/Shroom__Doom/?snr=1_7_7_151_150_1",
     "price": "Free",
     "release_date": "21 Jul, 2023",
-    "reviews": "Mixed"
-  },
-  {
-    "title": "Doom Rails",
-    "link": "https://store.steampowered.com/app/41400/Doom_Rails/?snr=1_7_7_151_150_1",
-    "price": "£1.99",
-    "release_date": "4 Nov, 2009",
-    "reviews": "Mostly Negative"
+    "reviews": "Mixed",
+    "tags": [
+      "4637",
+      "19",
+      "597",
+      "1645",
+      "1774",
+      "3871",
+      "4791"
+    ]
   },
   {
     "title": "Manor Lords",
     "link": "https://store.steampowered.com/app/1363080/Manor_Lords/?snr=1_7_7_151_150_1",
     "price": "",
     "release_date": "26 Apr, 2024",
-    "reviews": ""
+    "reviews": "",
+    "tags": [
+      "4328",
+      "9",
+      "4172",
+      "1695",
+      "21",
+      "599",
+      "3987"
+    ]
   },
   {
-    "title": "Doom \u0026 Destiny Worlds",
-    "link": "https://store.steampowered.com/app/953690/Doom__Destiny_Worlds/?snr=1_7_7_151_150_1",
-    "price": "£16.75",
-    "release_date": "18 Sep, 2020",
-    "reviews": "Mostly Positive"
+    "title": "Doom Rails",
+    "link": "https://store.steampowered.com/app/41400/Doom_Rails/?snr=1_7_7_151_150_1",
+    "price": "£1.99",
+    "release_date": "4 Nov, 2009",
+    "reviews": "Mostly Negative",
+    "tags": [
+      "19",
+      "492"
+    ]
   },
   {
     "title": "DOOM Demo",
     "link": "https://store.steampowered.com/app/379720/DOOM/?snr=1_7_7_151_150_1",
     "price": "Free",
     "release_date": "12 Jun, 2016",
-    "reviews": ""
+    "reviews": "",
+    "tags": [
+      "19"
+    ]
   },
   {
     "title": "Doom \u0026 Destiny Advanced",
     "link": "https://store.steampowered.com/app/361040/Doom__Destiny_Advanced/?snr=1_7_7_151_150_1",
     "price": "£8.99",
     "release_date": "15 Nov, 2016",
-    "reviews": "Very Positive"
+    "reviews": "Very Positive",
+    "tags": [
+      "122",
+      "4434",
+      "1719",
+      "492",
+      "4325",
+      "1684",
+      "5923"
+    ]
+  },
+  {
+    "title": "Doom \u0026 Destiny Worlds",
+    "link": "https://store.steampowered.com/app/953690/Doom__Destiny_Worlds/?snr=1_7_7_151_150_1",
+    "price": "£16.75",
+    "release_date": "18 Sep, 2020",
+    "reviews": "Mostly Positive",
+    "tags": [
+      "3841",
+      "1702",
+      "1695",
+      "4434",
+      "1662",
+      "7332",
+      "3834"
+    ]
   },
   {
     "title": "Deep Dungeons of Doom",
     "link": "https://store.steampowered.com/app/325090/Deep_Dungeons_of_Doom/?snr=1_7_7_151_150_1",
     "price": "£3.99",
     "release_date": "14 Oct, 2014",
-    "reviews": "Very Positive"
+    "reviews": "Very Positive",
+    "tags": [
+      "122",
+      "597",
+      "21",
+      "3964",
+      "1720",
+      "1684",
+      "1716"
+    ]
   },
   {
     "title": "Doom \u0026 Destiny Collection",
     "link": "https://store.steampowered.com/bundle/1661/Doom__Destiny_Collection/?snr=1_7_7_151_150_1",
     "price": "£33.17",
     "release_date": "",
-    "reviews": "Very Positive"
+    "reviews": "Very Positive",
+    "tags": [
+      "122",
+      "4434",
+      "492",
+      "1719",
+      "4325",
+      "1684",
+      "5577"
+    ]
   },
   {
     "title": "Terracotta - Shards of Doom",
     "link": "https://store.steampowered.com/app/1109750/Terracotta__Shards_of_Doom/?snr=1_7_7_151_150_1",
     "price": "Free",
     "release_date": "6 Aug, 2019",
-    "reviews": "Positive"
+    "reviews": "Positive",
+    "tags": [
+      "19",
+      "21"
+    ]
   },
   {
     "title": "Atomicrops: Doom \u0026 Bloom",
     "link": "https://store.steampowered.com/app/1598990/Atomicrops_Doom__Bloom/?snr=1_7_7_151_150_1",
     "price": "Free",
     "release_date": "16 Apr, 2021",
-    "reviews": "Positive"
-  },
-  {
-    "title": "DOOM Eternal: Series One Cosmetic Pack",
-    "link": "https://store.steampowered.com/app/1460020/DOOM_Eternal_Series_One_Cosmetic_Pack/?snr=1_7_7_151_150_1",
-    "price": "£3.69",
-    "release_date": "29 Apr, 2021",
-    "reviews": "Positive"
+    "reviews": "Positive",
+    "tags": [
+      "19",
+      "492"
+    ]
   },
   {
     "title": "The Forest of Doom (Standalone)",
     "link": "https://store.steampowered.com/app/270490/The_Forest_of_Doom_Standalone/?snr=1_7_7_151_150_1",
     "price": "£2.43",
     "release_date": "30 Oct, 2014",
-    "reviews": "Very Positive"
+    "reviews": "Very Positive",
+    "tags": [
+      "122",
+      "21",
+      "4486",
+      "3796",
+      "3799",
+      "492",
+      "4182"
+    ]
+  },
+  {
+    "title": "DOOM Eternal: Series One Cosmetic Pack",
+    "link": "https://store.steampowered.com/app/1460020/DOOM_Eternal_Series_One_Cosmetic_Pack/?snr=1_7_7_151_150_1",
+    "price": "£3.69",
+    "release_date": "29 Apr, 2021",
+    "reviews": "Positive",
+    "tags": [
+      "19",
+      "4345",
+      "4667"
+    ]
   },
   {
     "title": "Days of Doom",
     "link": "https://store.steampowered.com/app/2258180/Days_of_Doom/?snr=1_7_7_151_150_1",
     "price": "£24.99",
     "release_date": "21 Sep, 2023",
-    "reviews": ""
-  },
-  {
-    "title": "Retro Classix: Gate of Doom",
-    "link": "https://store.steampowered.com/app/1540430/Retro_Classix_Gate_of_Doom/?snr=1_7_7_151_150_1",
-    "price": "£5.19",
-    "release_date": "2 Mar, 2021",
-    "reviews": "Positive"
-  },
-  {
-    "title": "DOOM Eternal: Cosplay Slayer Master Collection Cosmetic Pack",
-    "link": "https://store.steampowered.com/app/1626003/DOOM_Eternal_Cosplay_Slayer_Master_Collection_Cosmetic_Pack/?snr=1_7_7_151_150_1",
-    "price": "£1.99",
-    "release_date": "5 Aug, 2021",
-    "reviews": "Positive"
+    "reviews": "",
+    "tags": [
+      "21725",
+      "14139",
+      "3959",
+      "1759",
+      "9",
+      "1741",
+      "1716"
+    ]
   },
   {
     "title": "DOOM Eternal: The Ancient Gods - Part One",
     "link": "https://store.steampowered.com/app/1098292/DOOM_Eternal_The_Ancient_Gods__Part_One/?snr=1_7_7_151_150_1",
     "price": "£5.27",
     "release_date": "20 Oct, 2020",
-    "reviews": "Mostly Positive"
+    "reviews": "Mostly Positive",
+    "tags": [
+      "19",
+      "4345",
+      "4667",
+      "1663",
+      "4026",
+      "1756",
+      "4182"
+    ]
+  },
+  {
+    "title": "Retro Classix: Gate of Doom",
+    "link": "https://store.steampowered.com/app/1540430/Retro_Classix_Gate_of_Doom/?snr=1_7_7_151_150_1",
+    "price": "£5.19",
+    "release_date": "2 Mar, 2021",
+    "reviews": "Positive",
+    "tags": [
+      "4231",
+      "1773",
+      "3841",
+      "5851",
+      "1720",
+      "10695",
+      "4004"
+    ]
   },
   {
     "title": "DOOM Eternal: The Ancient Gods - Part Two",
     "link": "https://store.steampowered.com/app/1098293/DOOM_Eternal_The_Ancient_Gods__Part_Two/?snr=1_7_7_151_150_1",
     "price": "£5.27",
     "release_date": "18 Mar, 2021",
-    "reviews": "Mixed"
+    "reviews": "Mixed",
+    "tags": [
+      "19",
+      "4667",
+      "4345",
+      "1663",
+      "9541",
+      "1756",
+      "4182"
+    ]
+  },
+  {
+    "title": "DOOM Eternal: Cosplay Slayer Master Collection Cosmetic Pack",
+    "link": "https://store.steampowered.com/app/1626003/DOOM_Eternal_Cosplay_Slayer_Master_Collection_Cosmetic_Pack/?snr=1_7_7_151_150_1",
+    "price": "£1.99",
+    "release_date": "5 Aug, 2021",
+    "reviews": "Positive",
+    "tags": [
+      "19",
+      "4345",
+      "4667"
+    ]
   },
   {
     "title": "BRINK: Doom®/Psycho Combo Pack",
     "link": "https://store.steampowered.com/app/22361/BRINK_DoomPsycho_Combo_Pack/?snr=1_7_7_151_150_1",
     "price": "£0.79",
     "release_date": "23 Aug, 2011",
-    "reviews": "Mixed"
-  },
-  {
-    "title": "The Haunted House of Doom",
-    "link": "https://store.steampowered.com/app/781920/The_Haunted_House_of_Doom/?snr=1_7_7_151_150_1",
-    "price": "£2.89",
-    "release_date": "13 Oct, 2020",
-    "reviews": "Positive"
+    "reviews": "Mixed",
+    "tags": [
+      "19"
+    ]
   },
   {
     "title": "Tower of Doom",
     "link": "https://store.steampowered.com/app/1509840/Tower_of_Doom/?snr=1_7_7_151_150_1",
     "price": "£11.39",
     "release_date": "29 Jul, 2021",
-    "reviews": ""
+    "reviews": "",
+    "tags": [
+      "19",
+      "1773",
+      "21978",
+      "1774",
+      "1662",
+      "5765",
+      "4885"
+    ]
   },
   {
     "title": "Ball of Doom",
     "link": "https://store.steampowered.com/app/1284290/Ball_of_Doom/?snr=1_7_7_151_150_1",
     "price": "£1.69",
     "release_date": "18 Apr, 2020",
-    "reviews": ""
+    "reviews": "",
+    "tags": [
+      "492",
+      "5363",
+      "5395",
+      "4026",
+      "3964"
+    ]
+  },
+  {
+    "title": "The Haunted House of Doom",
+    "link": "https://store.steampowered.com/app/781920/The_Haunted_House_of_Doom/?snr=1_7_7_151_150_1",
+    "price": "£2.89",
+    "release_date": "13 Oct, 2020",
+    "reviews": "Positive",
+    "tags": [
+      "21",
+      "1667",
+      "3871",
+      "5716",
+      "3834",
+      "9",
+      "4305"
+    ]
   },
   {
     "title": "Fairly Certain Doom",
     "link": "https://store.steampowered.com/app/790170/Fairly_Certain_Doom/?snr=1_7_7_151_150_1",
     "price": "£1.69",
     "release_date": "3 Apr, 2018",
-    "reviews": ""
+    "reviews": "",
+    "tags": [
+      "21",
+      "21978",
+      "5984"
+    ]
   },
   {
-    "title": "Masquerade: The Baubles of Doom",
-    "link": "https://store.steampowered.com/app/299380/Masquerade_The_Baubles_of_Doom/?snr=1_7_7_151_150_1",
-    "price": "£9.99",
-    "release_date": "20 Apr, 2016",
-    "reviews": "Mostly Positive"
+    "title": "Road Doom Soundtrack",
+    "link": "https://store.steampowered.com/app/1961270/Road_Doom_Soundtrack/?snr=1_7_7_151_150_1",
+    "price": "£1.26",
+    "release_date": "17 Aug, 2022",
+    "reviews": "",
+    "tags": [
+      ""
+    ]
   },
   {
     "title": "Theatre of Doom",
     "link": "https://store.steampowered.com/app/553020/Theatre_of_Doom/?snr=1_7_7_151_150_1",
     "price": "£8.50",
     "release_date": "19 Apr, 2017",
-    "reviews": ""
+    "reviews": "",
+    "tags": [
+      "19",
+      "4026",
+      "1646",
+      "7481",
+      "1773",
+      "5547",
+      "4182"
+    ]
   }
 ]
