@@ -230,6 +230,20 @@
     ]
   },
   {
+    "title": "ULTRAKILL",
+    "link": "https://store.steampowered.com/app/1229490/ULTRAKILL/?snr=1_7_7_151_150_1",
+    "price": "£14.69",
+    "release_date": "3 Sep, 2020",
+    "reviews": "Overwhelmingly Positive",
+    "tags": [
+      "Character Action Game",
+      "Fast-Paced",
+      "FPS",
+      "Blood",
+      "Spectacle fighter"
+    ]
+  },
+  {
     "title": "Doom Survivors",
     "link": "https://store.steampowered.com/app/2746830/Doom_Survivors/?snr=1_7_7_151_150_1",
     "price": "",
@@ -242,20 +256,6 @@
       "Rogue-like",
       "RPG",
       "Singleplayer"
-    ]
-  },
-  {
-    "title": "ULTRAKILL",
-    "link": "https://store.steampowered.com/app/1229490/ULTRAKILL/?snr=1_7_7_151_150_1",
-    "price": "£14.69",
-    "release_date": "3 Sep, 2020",
-    "reviews": "Overwhelmingly Positive",
-    "tags": [
-      "Character Action Game",
-      "Fast-Paced",
-      "FPS",
-      "Blood",
-      "Spectacle fighter"
     ]
   },
   {
@@ -441,16 +441,6 @@
     ]
   },
   {
-    "title": "DOOM Demo",
-    "link": "https://store.steampowered.com/app/379720/DOOM/?snr=1_7_7_151_150_1",
-    "price": "Free",
-    "release_date": "12 Jun, 2016",
-    "reviews": "",
-    "tags": [
-      "Action"
-    ]
-  },
-  {
     "title": "Doom & Destiny Advanced",
     "link": "https://store.steampowered.com/app/361040/Doom__Destiny_Advanced/?snr=1_7_7_151_150_1",
     "price": "£8.99",
@@ -464,6 +454,16 @@
       "Turn-Based Combat",
       "Fantasy",
       "Dark Humor"
+    ]
+  },
+  {
+    "title": "DOOM Demo",
+    "link": "https://store.steampowered.com/app/379720/DOOM/?snr=1_7_7_151_150_1",
+    "price": "Free",
+    "release_date": "12 Jun, 2016",
+    "reviews": "",
+    "tags": [
+      "Action"
     ]
   },
   {
@@ -537,6 +537,18 @@
     ]
   },
   {
+    "title": "DOOM Eternal: Series One Cosmetic Pack",
+    "link": "https://store.steampowered.com/app/1460020/DOOM_Eternal_Series_One_Cosmetic_Pack/?snr=1_7_7_151_150_1",
+    "price": "£3.69",
+    "release_date": "29 Apr, 2021",
+    "reviews": "Positive",
+    "tags": [
+      "Action",
+      "Gore",
+      "Violent"
+    ]
+  },
+  {
     "title": "The Forest of Doom (Standalone)",
     "link": "https://store.steampowered.com/app/270490/The_Forest_of_Doom_Standalone/?snr=1_7_7_151_150_1",
     "price": "£2.43",
@@ -553,18 +565,6 @@
     ]
   },
   {
-    "title": "DOOM Eternal: Series One Cosmetic Pack",
-    "link": "https://store.steampowered.com/app/1460020/DOOM_Eternal_Series_One_Cosmetic_Pack/?snr=1_7_7_151_150_1",
-    "price": "£3.69",
-    "release_date": "29 Apr, 2021",
-    "reviews": "Positive",
-    "tags": [
-      "Action",
-      "Gore",
-      "Violent"
-    ]
-  },
-  {
     "title": "Days of Doom",
     "link": "https://store.steampowered.com/app/2258180/Days_of_Doom/?snr=1_7_7_151_150_1",
     "price": "£24.99",
@@ -578,6 +578,18 @@
       "Strategy",
       "Turn-Based Strategy",
       "Rogue-like"
+    ]
+  },
+  {
+    "title": "DOOM Eternal: Cosplay Slayer Master Collection Cosmetic Pack",
+    "link": "https://store.steampowered.com/app/1626003/DOOM_Eternal_Cosplay_Slayer_Master_Collection_Cosmetic_Pack/?snr=1_7_7_151_150_1",
+    "price": "£1.99",
+    "release_date": "5 Aug, 2021",
+    "reviews": "Positive",
+    "tags": [
+      "Action",
+      "Gore",
+      "Violent"
     ]
   },
   {
@@ -626,18 +638,6 @@
       "Demons",
       "Great Soundtrack",
       "Singleplayer"
-    ]
-  },
-  {
-    "title": "DOOM Eternal: Cosplay Slayer Master Collection Cosmetic Pack",
-    "link": "https://store.steampowered.com/app/1626003/DOOM_Eternal_Cosplay_Slayer_Master_Collection_Cosmetic_Pack/?snr=1_7_7_151_150_1",
-    "price": "£1.99",
-    "release_date": "5 Aug, 2021",
-    "reviews": "Positive",
-    "tags": [
-      "Action",
-      "Gore",
-      "Violent"
     ]
   },
   {
@@ -697,6 +697,19 @@
     ]
   },
   {
+    "title": "Masquerade: The Baubles of Doom",
+    "link": "https://store.steampowered.com/app/299380/Masquerade_The_Baubles_of_Doom/?snr=1_7_7_151_150_1",
+    "price": "£9.99",
+    "release_date": "20 Apr, 2016",
+    "reviews": "Mostly Positive",
+    "tags": [
+      "Action",
+      "Adventure",
+      "Indie",
+      "Casual"
+    ]
+  },
+  {
     "title": "Fairly Certain Doom",
     "link": "https://store.steampowered.com/app/790170/Fairly_Certain_Doom/?snr=1_7_7_151_150_1",
     "price": "£1.69",
@@ -715,21 +728,5 @@
     "release_date": "17 Aug, 2022",
     "reviews": "",
     "tags": null
-  },
-  {
-    "title": "Theatre of Doom",
-    "link": "https://store.steampowered.com/app/553020/Theatre_of_Doom/?snr=1_7_7_151_150_1",
-    "price": "£8.50",
-    "release_date": "19 Apr, 2017",
-    "reviews": "",
-    "tags": [
-      "Action",
-      "Difficult",
-      "Hack and Slash",
-      "Controller",
-      "Arcade",
-      "Arena Shooter",
-      "Singleplayer"
-    ]
   }
 ]
