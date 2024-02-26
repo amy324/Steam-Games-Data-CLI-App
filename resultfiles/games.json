@@ -2,7 +2,7 @@
   {
     "title": "DOOM",
     "link": "https://store.steampowered.com/app/379720/DOOM/?snr=1_7_7_151_150_1",
-    "price": "£3.19",
+    "price": "£15.99",
     "release_date": "12 May, 2016",
     "reviews": "Overwhelmingly Positive",
     "tags": [
@@ -18,7 +18,7 @@
   {
     "title": "DOOM Eternal",
     "link": "https://store.steampowered.com/app/782330/DOOM_Eternal/?snr=1_7_7_151_150_1",
-    "price": "£6.99",
+    "price": "£34.99",
     "release_date": "19 Mar, 2020",
     "reviews": "Very Positive",
     "tags": [
@@ -34,7 +34,7 @@
   {
     "title": "DOOM 3",
     "link": "https://store.steampowered.com/app/208200/DOOM_3/?snr=1_7_7_151_150_1",
-    "price": "£3.19",
+    "price": "£7.99",
     "release_date": "18 Oct, 2012",
     "reviews": "Very Positive",
     "tags": [
@@ -50,7 +50,7 @@
   {
     "title": "DOOM (1993)",
     "link": "https://store.steampowered.com/app/2280/DOOM_1993/?snr=1_7_7_151_150_1",
-    "price": "£1.31",
+    "price": "£3.99",
     "release_date": "3 Aug, 2007",
     "reviews": "Overwhelmingly Positive",
     "tags": [
@@ -65,7 +65,7 @@
   {
     "title": "DOOM II",
     "link": "https://store.steampowered.com/app/2300/DOOM_II/?snr=1_7_7_151_150_1",
-    "price": "£1.31",
+    "price": "£3.99",
     "release_date": "3 Aug, 2007",
     "reviews": "Overwhelmingly Positive",
     "tags": [
@@ -79,25 +79,9 @@
     ]
   },
   {
-    "title": "DOOM Franchise Bundle",
-    "link": "https://store.steampowered.com/bundle/15366/DOOM_Franchise_Bundle/?snr=1_7_7_151_150_1",
-    "price": "£22.32",
-    "release_date": "",
-    "reviews": "Very Positive",
-    "tags": [
-      "FPS",
-      "Action",
-      "Classic",
-      "Shooter",
-      "Gore",
-      "1990's",
-      "Demons"
-    ]
-  },
-  {
     "title": "DOOM 64",
     "link": "https://store.steampowered.com/app/1148590/DOOM_64/?snr=1_7_7_151_150_1",
-    "price": "£1.31",
+    "price": "£3.99",
     "release_date": "19 Mar, 2020",
     "reviews": "Very Positive",
     "tags": [
@@ -113,7 +97,7 @@
   {
     "title": "DOOM VFR",
     "link": "https://store.steampowered.com/app/650000/DOOM_VFR/?snr=1_7_7_151_150_1",
-    "price": "£3.24",
+    "price": "£12.99",
     "release_date": "30 Nov, 2017",
     "reviews": "Mixed",
     "tags": [
@@ -127,9 +111,25 @@
     ]
   },
   {
+    "title": "DOOM Franchise Bundle",
+    "link": "https://store.steampowered.com/bundle/15366/DOOM_Franchise_Bundle/?snr=1_7_7_151_150_1",
+    "price": "£84.54",
+    "release_date": "",
+    "reviews": "Very Positive",
+    "tags": [
+      "FPS",
+      "Action",
+      "Classic",
+      "Shooter",
+      "Gore",
+      "1990's",
+      "Demons"
+    ]
+  },
+  {
     "title": "DOOM Soundtrack",
     "link": "https://store.steampowered.com/app/1195480/DOOM_Soundtrack/?snr=1_7_7_151_150_1",
-    "price": "£3.99",
+    "price": "£7.99",
     "release_date": "11 Feb, 2020",
     "reviews": "Very Positive",
     "tags": [
@@ -154,7 +154,7 @@
   {
     "title": "Road Doom",
     "link": "https://store.steampowered.com/app/792860/Road_Doom/?snr=1_7_7_151_150_1",
-    "price": "£3.21",
+    "price": "£4.29",
     "release_date": "17 Aug, 2018",
     "reviews": "Positive",
     "tags": [
@@ -170,7 +170,7 @@
   {
     "title": "DOOM Classic Bundle",
     "link": "https://store.steampowered.com/bundle/27490/DOOM_Classic_Bundle/?snr=1_7_7_151_150_1",
-    "price": "£5.33",
+    "price": "£14.96",
     "release_date": "",
     "reviews": "Very Positive",
     "tags": [
@@ -230,20 +230,6 @@
     ]
   },
   {
-    "title": "ULTRAKILL",
-    "link": "https://store.steampowered.com/app/1229490/ULTRAKILL/?snr=1_7_7_151_150_1",
-    "price": "£14.69",
-    "release_date": "3 Sep, 2020",
-    "reviews": "Overwhelmingly Positive",
-    "tags": [
-      "Character Action Game",
-      "Fast-Paced",
-      "FPS",
-      "Blood",
-      "Spectacle fighter"
-    ]
-  },
-  {
     "title": "Doom Survivors",
     "link": "https://store.steampowered.com/app/2746830/Doom_Survivors/?snr=1_7_7_151_150_1",
     "price": "",
@@ -256,6 +242,20 @@
       "Rogue-like",
       "RPG",
       "Singleplayer"
+    ]
+  },
+  {
+    "title": "ULTRAKILL",
+    "link": "https://store.steampowered.com/app/1229490/ULTRAKILL/?snr=1_7_7_151_150_1",
+    "price": "£14.69",
+    "release_date": "3 Sep, 2020",
+    "reviews": "Overwhelmingly Positive",
+    "tags": [
+      "Character Action Game",
+      "Fast-Paced",
+      "FPS",
+      "Blood",
+      "Spectacle fighter"
     ]
   },
   {
@@ -369,7 +369,7 @@
   {
     "title": "Tunnel of Doom",
     "link": "https://store.steampowered.com/app/1361840/Tunnel_of_Doom/?snr=1_7_7_151_150_1",
-    "price": "£10.99",
+    "price": "£3.29",
     "release_date": "23 Nov, 2021",
     "reviews": "Mixed",
     "tags": [
@@ -379,22 +379,6 @@
       "Perma Death",
       "Action RPG",
       "Action-Adventure"
-    ]
-  },
-  {
-    "title": "Ski Doom VR",
-    "link": "https://store.steampowered.com/app/1358630/Ski_Doom_VR/?snr=1_7_7_151_150_1",
-    "price": "Free",
-    "release_date": "13 Aug, 2020",
-    "reviews": "Mostly Positive",
-    "tags": [
-      "Sports",
-      "Indie",
-      "Arcade",
-      "Procedural Generation",
-      "Survival",
-      "3D Platformer",
-      "Physics"
     ]
   },
   {
@@ -411,6 +395,22 @@
       "Shooter",
       "2D",
       "Top-Down"
+    ]
+  },
+  {
+    "title": "Ski Doom VR",
+    "link": "https://store.steampowered.com/app/1358630/Ski_Doom_VR/?snr=1_7_7_151_150_1",
+    "price": "Free",
+    "release_date": "13 Aug, 2020",
+    "reviews": "Mostly Positive",
+    "tags": [
+      "Sports",
+      "Indie",
+      "Arcade",
+      "Procedural Generation",
+      "Survival",
+      "3D Platformer",
+      "Physics"
     ]
   },
   {
@@ -441,6 +441,16 @@
     ]
   },
   {
+    "title": "DOOM Demo",
+    "link": "https://store.steampowered.com/app/379720/DOOM/?snr=1_7_7_151_150_1",
+    "price": "Free",
+    "release_date": "12 Jun, 2016",
+    "reviews": "",
+    "tags": [
+      "Action"
+    ]
+  },
+  {
     "title": "Doom & Destiny Advanced",
     "link": "https://store.steampowered.com/app/361040/Doom__Destiny_Advanced/?snr=1_7_7_151_150_1",
     "price": "£8.99",
@@ -454,16 +464,6 @@
       "Turn-Based Combat",
       "Fantasy",
       "Dark Humor"
-    ]
-  },
-  {
-    "title": "DOOM Demo",
-    "link": "https://store.steampowered.com/app/379720/DOOM/?snr=1_7_7_151_150_1",
-    "price": "Free",
-    "release_date": "12 Jun, 2016",
-    "reviews": "",
-    "tags": [
-      "Action"
     ]
   },
   {
@@ -539,7 +539,7 @@
   {
     "title": "DOOM Eternal: Series One Cosmetic Pack",
     "link": "https://store.steampowered.com/app/1460020/DOOM_Eternal_Series_One_Cosmetic_Pack/?snr=1_7_7_151_150_1",
-    "price": "£3.69",
+    "price": "£7.39",
     "release_date": "29 Apr, 2021",
     "reviews": "Positive",
     "tags": [
@@ -551,7 +551,7 @@
   {
     "title": "The Forest of Doom (Standalone)",
     "link": "https://store.steampowered.com/app/270490/The_Forest_of_Doom_Standalone/?snr=1_7_7_151_150_1",
-    "price": "£2.43",
+    "price": "£3.99",
     "release_date": "30 Oct, 2014",
     "reviews": "Very Positive",
     "tags": [
@@ -583,7 +583,7 @@
   {
     "title": "DOOM Eternal: Cosplay Slayer Master Collection Cosmetic Pack",
     "link": "https://store.steampowered.com/app/1626003/DOOM_Eternal_Cosplay_Slayer_Master_Collection_Cosmetic_Pack/?snr=1_7_7_151_150_1",
-    "price": "£1.99",
+    "price": "£3.99",
     "release_date": "5 Aug, 2021",
     "reviews": "Positive",
     "tags": [
@@ -595,7 +595,7 @@
   {
     "title": "DOOM Eternal: The Ancient Gods - Part One",
     "link": "https://store.steampowered.com/app/1098292/DOOM_Eternal_The_Ancient_Gods__Part_One/?snr=1_7_7_151_150_1",
-    "price": "£5.27",
+    "price": "£15.99",
     "release_date": "20 Oct, 2020",
     "reviews": "Mostly Positive",
     "tags": [
@@ -627,7 +627,7 @@
   {
     "title": "DOOM Eternal: The Ancient Gods - Part Two",
     "link": "https://store.steampowered.com/app/1098293/DOOM_Eternal_The_Ancient_Gods__Part_Two/?snr=1_7_7_151_150_1",
-    "price": "£5.27",
+    "price": "£15.99",
     "release_date": "18 Mar, 2021",
     "reviews": "Mixed",
     "tags": [
@@ -697,6 +697,18 @@
     ]
   },
   {
+    "title": "Fairly Certain Doom",
+    "link": "https://store.steampowered.com/app/790170/Fairly_Certain_Doom/?snr=1_7_7_151_150_1",
+    "price": "£1.69",
+    "release_date": "3 Apr, 2018",
+    "reviews": "",
+    "tags": [
+      "Adventure",
+      "VR",
+      "Drama"
+    ]
+  },
+  {
     "title": "Masquerade: The Baubles of Doom",
     "link": "https://store.steampowered.com/app/299380/Masquerade_The_Baubles_of_Doom/?snr=1_7_7_151_150_1",
     "price": "£9.99",
@@ -710,23 +722,19 @@
     ]
   },
   {
-    "title": "Fairly Certain Doom",
-    "link": "https://store.steampowered.com/app/790170/Fairly_Certain_Doom/?snr=1_7_7_151_150_1",
-    "price": "£1.69",
-    "release_date": "3 Apr, 2018",
+    "title": "Theatre of Doom",
+    "link": "https://store.steampowered.com/app/553020/Theatre_of_Doom/?snr=1_7_7_151_150_1",
+    "price": "£8.50",
+    "release_date": "19 Apr, 2017",
     "reviews": "",
     "tags": [
-      "Adventure",
-      "VR",
-      "Drama"
+      "Action",
+      "Difficult",
+      "Hack and Slash",
+      "Controller",
+      "Arcade",
+      "Arena Shooter",
+      "Singleplayer"
     ]
-  },
-  {
-    "title": "Road Doom Soundtrack",
-    "link": "https://store.steampowered.com/app/1961270/Road_Doom_Soundtrack/?snr=1_7_7_151_150_1",
-    "price": "£1.26",
-    "release_date": "17 Aug, 2022",
-    "reviews": "",
-    "tags": null
   }
 ]
