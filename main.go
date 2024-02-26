@@ -40,11 +40,6 @@ func main() {
 		return
 	}
 
-	// Unescape tag names
-	for key, value := range tags {
-		tags[key] = unescape(value)
-	}
-
 	// Get game keyword input from user
 	var gameKeyword string
 	fmt.Print("Enter the game keyword you want to search: ")
@@ -75,6 +70,7 @@ func main() {
 
 	jsonEncoder := json.NewEncoder(jsonFile)
 	jsonEncoder.SetIndent("", "  ")
+	jsonEncoder.SetEscapeHTML(false) // Prevent escaping HTML characters
 	err = jsonEncoder.Encode(games)
 	if err != nil {
 		fmt.Println("Error encoding JSON:", err)
@@ -157,18 +153,18 @@ func scrapePage(url string, tags TagsMap) ([]Game, error) {
 		tagIDs := strings.Split(strings.Trim(tagIDsStr, "[]"), ",")
 
 		// Debug print for tag IDs extracted from HTML
-		fmt.Println("Tag IDs from HTML for", title, ":", tagIDs)
+		// fmt.Println("Tag IDs from HTML for", title, ":", tagIDs)
 
 		// Print corresponding tag names from tags.json
-		fmt.Println("Tag names for", title, ":")
+		// fmt.Println("Tag names for", title, ":")
 		var tagNames []string
 		for _, tagID := range tagIDs {
 			tagName, ok := tags[tagID]
 			if ok {
 				tagNames = append(tagNames, tagName)
-				fmt.Println(tagName)
+				// fmt.Println(tagName)
 			} else {
-				fmt.Println("Tag name not found for ID:", tagID)
+				// fmt.Println("Tag name not found for ID:", tagID)
 			}
 		}
 
@@ -185,9 +181,4 @@ func scrapePage(url string, tags TagsMap) ([]Game, error) {
 	})
 
 	return games, nil
-}
-
-// Function to unescape HTML entities
-func unescape(s string) string {
-	return strings.ReplaceAll(s, `\u0026`, "&")
 }
