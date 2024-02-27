@@ -11,6 +11,7 @@ import (
 	"os"
 	"os/exec"
 	"regexp"
+
 	//"runtime"
 	"strings"
 
@@ -32,7 +33,6 @@ type Game struct {
 // TagsMap represents the structure of the tags JSON file
 type TagsMap map[string]string
 
-
 func main() {
 	color.Cyan("Welcome to Steam Scraper!")
 	color.Cyan("----------------------------")
@@ -48,135 +48,215 @@ func main() {
 		fmt.Println(err)
 		os.Exit(1)
 	}
-
-	// Wait for user input before closing the window
-	fmt.Print("Press Enter to exit...")
-	fmt.Scanln()
 }
 
 func scrape() {
-	// Load tags data from JSON file
-	tagsFile, err := os.Open("data/tags.json")
+    // Load tags data from JSON file
+    tagsFile, err := os.Open("data/tags.json")
+    if err != nil {
+        fmt.Println("Error opening tags file:", err)
+        return
+    }
+    defer tagsFile.Close()
+
+    var tags TagsMap
+    err = json.NewDecoder(tagsFile).Decode(&tags)
+    if err != nil {
+        fmt.Println("Error decoding tags JSON:", err)
+        return
+    }
+
+    // Create a folder to hold the extracted files
+    err = os.Mkdir("resultfiles", 0755)
+    if err != nil && !os.IsExist(err) {
+        fmt.Println("Error creating folder:", err)
+        return
+    }
+
+    // Get birthtime from environment
+    birthtime := os.Getenv("BIRTHTIME")
+
+    var jsonFilePath, csvFilePath string
+
+    reader := bufio.NewReader(os.Stdin)
+
+    var fileOpened bool // Flag to indicate whether the file has been opened
+    var games []Game    // Define games slice here to access it outside the loop
+
+    for {
+        if !fileOpened {
+            // Get game keyword input from user
+            var gameKeyword string
+            fmt.Print("Enter the game keyword you want to search (or 'quit' to exit): ")
+            gameKeyword, err = reader.ReadString('\n')
+            if err != nil {
+                fmt.Println("Error reading input:", err)
+                return
+            }
+            gameKeyword = strings.TrimSpace(gameKeyword)
+
+            if gameKeyword == "quit" {
+                break
+            }
+
+            // Scrape data from the first page
+            url := fmt.Sprintf("https://store.steampowered.com/search/?term=%s", gameKeyword)
+            games, err = scrapePage(url, tags) // Assign to the games variable defined outside the loop
+            if err != nil {
+                fmt.Println("Error scraping page:", err)
+                continue
+            }
+
+            // Output data to JSON file
+            jsonFilePath = "resultfiles/games.json"
+            jsonFile, err := os.Create(jsonFilePath)
+            if err != nil {
+                color.Red("Error creating JSON file:", err)
+                return
+            }
+            defer jsonFile.Close()
+
+            jsonEncoder := json.NewEncoder(jsonFile)
+            jsonEncoder.SetIndent("", "  ")
+            jsonEncoder.SetEscapeHTML(false) // Prevent escaping HTML characters
+            err = jsonEncoder.Encode(games)
+            if err != nil {
+                color.Red("Error encoding JSON:", err)
+                return
+            }
+
+            // Output data to CSV file
+            csvFilePath = "resultfiles/games.csv"
+            csvFile, err := os.Create(csvFilePath)
+            if err != nil {
+                fmt.Println("Error creating CSV file:", err)
+                return
+            }
+            defer csvFile.Close()
+
+            csvWriter := csv.NewWriter(csvFile)
+            defer csvWriter.Flush()
+
+            // Write CSV header
+            err = csvWriter.Write([]string{"Title", "Link", "Price", "Release Date", "Reviews", "Tags"})
+            if err != nil {
+                color.Red("Error writing CSV header:", err)
+                return
+            }
+
+            // Write game data to CSV
+            for _, game := range games {
+                // Combine tags into a single string
+                tagsStr := strings.Join(game.Tags, ", ")
+                err := csvWriter.Write([]string{game.Title, game.Link, game.Price, game.ReleaseDate, game.Reviews, tagsStr})
+                if err != nil {
+                    fmt.Println("Error writing CSV record:", err)
+                    return
+                }
+            }
+
+            color.Green("JSON and CSV files created successfully.")
+
+            // Prompt user to open the results
+            fileOpened = openResults(jsonFilePath, csvFilePath)
+        } else {
+            // Prompt user to enter the link for additional details
+            if err := promptAdditionalDetails(games, reader, birthtime); err != nil {
+                color.Red("Error processing additional details:", err)
+                continue
+            }
+
+            fileOpened = false // Reset fileOpened flag for the next iteration
+        }
+    }
+}
+
+func promptAdditionalDetails(games []Game, reader *bufio.Reader, birthtime string) error {
+    fmt.Print("Enter the link of the game from your JSON/CSV file for additional details (or 'quit' to exit): ")
+    input, err := reader.ReadString('\n')
+    if err != nil {
+        return fmt.Errorf("error reading input: %v", err)
+    }
+
+    // Remove newline character from the end of the input
+    input = strings.TrimSpace(input)
+
+    if input == "quit" {
+        return nil // Exit without error if user chooses to quit
+    }
+
+    // Find the game in the JSON file
+    var selectedGame *Game
+    for _, g := range games {
+        if g.Link == input {
+            selectedGame = &g
+            break
+        }
+    }
+
+    if selectedGame == nil {
+        return fmt.Errorf("game not found")
+    }
+
+    // Scrape additional details from the selected game's link
+    if err := scrapeAdditionalDetails(selectedGame, birthtime); err != nil {
+        return fmt.Errorf("error scraping additional details: %v", err)
+    }
+
+    return nil
+}
+
+
+func openResults(jsonFilePath, csvFilePath string) bool {
+	var cmd *exec.Cmd
+
+	reader := bufio.NewReader(os.Stdin)
+	fmt.Printf("Do you want to open the results? (Type 'J' to open JSON, 'C' to open CSV, or 'next' to move on): ")
+	input, err := reader.ReadString('\n')
 	if err != nil {
-		fmt.Println("Error opening tags file:", err)
-		return
-	}
-	defer tagsFile.Close()
-
-	var tags TagsMap
-	err = json.NewDecoder(tagsFile).Decode(&tags)
-	if err != nil {
-		fmt.Println("Error decoding tags JSON:", err)
-		return
+		fmt.Println("Error reading input:", err)
+		return false
 	}
 
-	// Create a folder to hold the extracted files
-	err = os.Mkdir("resultfiles", 0755)
-	if err != nil && !os.IsExist(err) {
-		fmt.Println("Error creating folder:", err)
-		return
+	input = strings.ToLower(strings.TrimSpace(input))
+	switch input {
+	case "j":
+		cmd = exec.Command("notepad", jsonFilePath) // Open JSON file with Notepad
+	case "c":
+		cmd = exec.Command("cmd", "/c", "start", csvFilePath) // Open CSV file with default program
+	case "next":
+		fmt.Println("Moving on to the next operation.")
+		return true // Return true when user selects 'next'
+	default:
+		fmt.Println("Unsupported input.")
+		return false
 	}
 
-	// Get birthtime from environment
-	birthtime := os.Getenv("BIRTHTIME")
-
-	for {
-		// Get game keyword input from user
-		var gameKeyword string
-		fmt.Print("Enter the game keyword you want to search (or 'quit' to exit): ")
-		fmt.Scanln(&gameKeyword)
-
-		if gameKeyword == "quit" {
-			break
+	// Run the command to open the file
+	if cmd != nil {
+		if err := cmd.Start(); err != nil {
+			fmt.Println("Error opening file:", err)
+			return false
 		}
+		fmt.Println("File opened successfully.")
 
-		// Scrape data from the first page
-		url := fmt.Sprintf("https://store.steampowered.com/search/?term=%s", gameKeyword)
-		games, err := scrapePage(url, tags)
-		if err != nil {
-			fmt.Println("Error scraping page:", err)
-			continue
-		}
-
-		// Output data to JSON file
-		jsonFile, err := os.Create("resultfiles/games.json")
-		if err != nil {
-			color.Red("Error creating JSON file:", err)
-			return
-		}
-		defer jsonFile.Close()
-
-		jsonEncoder := json.NewEncoder(jsonFile)
-		jsonEncoder.SetIndent("", "  ")
-		jsonEncoder.SetEscapeHTML(false) // Prevent escaping HTML characters
-		err = jsonEncoder.Encode(games)
-		if err != nil {
-			color.Red("Error encoding JSON:", err)
-			return
-		}
-
-		color.Green("JSON file created successfully.")
-		
-		color.Green("CSV file created successfully.")
-		
-		openFile("resultfiles/games.csv", "CSV")
-
-
-		// Output data to CSV file
-		csvFile, err := os.Create("resultfiles/games.csv")
-		if err != nil {
-			fmt.Println("Error creating CSV file:", err)
-			return
-		}
-		defer csvFile.Close()
-
-		csvWriter := csv.NewWriter(csvFile)
-		defer csvWriter.Flush()
-
-		// Write CSV header
-		err = csvWriter.Write([]string{"Title", "Link", "Price", "Release Date", "Reviews", "Tags"})
-		if err != nil {
-			color.Red("Error writing CSV header:", err)
-			return
-		}
-
-		// Write game data to CSV
-		for _, game := range games {
-			// Combine tags into a single string
-			tagsStr := strings.Join(game.Tags, ", ")
-			err := csvWriter.Write([]string{game.Title, game.Link, game.Price, game.ReleaseDate, game.Reviews, tagsStr})
+		// Wait for the user to explicitly type 'next' to continue
+		for {
+			fmt.Print("Type 'next' to move on: ")
+			input, err := reader.ReadString('\n')
 			if err != nil {
-				fmt.Println("Error writing CSV record:", err)
-				return
+				fmt.Println("Error reading input:", err)
+				return false
 			}
-		}
-
-
-		// Prompt user to select a game for additional details
-		var input string
-		fmt.Print("Enter the link of the game from your JSON/CSV file for additional details: ")
-		fmt.Scanln(&input)
-
-		// Find the game in the JSON file
-		var selectedGame *Game
-		for _, g := range games {
-			if g.Title == input || g.Link == input {
-				selectedGame = &g
-				break
+			input = strings.ToLower(strings.TrimSpace(input))
+			if input == "next" {
+				fmt.Println("Moving on to the next operation.")
+				return true
 			}
-		}
-
-		if selectedGame == nil {
-			color.Red("Game not found.")
-			continue
-		}
-
-		// Scrape additional details from the selected game's link
-		if err := scrapeAdditionalDetails(selectedGame, birthtime); err != nil {
-			color.Red("Error scraping additional details:", err)
-			continue
 		}
 	}
+
+	return false
 }
 
 func scrapePage(url string, tags TagsMap) ([]Game, error) {
@@ -321,8 +401,8 @@ func scrapeAdditionalDetails(game *Game, birthtime string) error {
 			systemRequirements := strings.TrimSpace(sysReqSection.Find(".sysreq_contents").Text())
 			// Clean up system requirements text
 			systemRequirements = strings.ReplaceAll(systemRequirements, "\n", " ") // Remove newlines
-			systemRequirements = strings.ReplaceAll(systemRequirements, "  ", "")    // Remove excessive spaces
-			systemRequirements = strings.TrimSpace(systemRequirements)            // Trim leading and trailing spaces
+			systemRequirements = strings.ReplaceAll(systemRequirements, "  ", "")  // Remove excessive spaces
+			systemRequirements = strings.TrimSpace(systemRequirements)             // Trim leading and trailing spaces
 			// Replace multiple spaces with a single space
 			systemRequirements = regexp.MustCompile(`\s+`).ReplaceAllString(systemRequirements, " ")
 			// Print system requirements with distinct formatting
@@ -336,34 +416,3 @@ func scrapeAdditionalDetails(game *Game, birthtime string) error {
 
 	return nil
 }
-// Function to open file
-func openFile(filepath string, fileType string) {
-    var cmd *exec.Cmd
-
-    reader := bufio.NewReader(os.Stdin)
-    fmt.Printf("Do you want to open the %s file? (yes/no): ", fileType)
-    input, err := reader.ReadString('\n')
-    if err != nil {
-        fmt.Println("Error reading input:", err)
-        return
-    }
-
-    input = strings.ToLower(strings.TrimSpace(input))
-    if input == "yes" || input == "y" {
-        switch fileType {
-        case "CSV":
-            cmd = exec.Command("cmd", "/c", "start", filepath) // For Windows
-        default:
-            fmt.Println("Unsupported file type")
-            return
-        }
-
-        if cmd != nil {
-            err := cmd.Run()
-            if err != nil {
-                fmt.Println("Error opening file:", err)
-            }
-        }
-    }
-}
-

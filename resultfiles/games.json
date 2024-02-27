@@ -276,6 +276,20 @@
     ]
   },
   {
+    "title": "ULTRAKILL",
+    "link": "https://store.steampowered.com/app/1229490/ULTRAKILL/?snr=1_7_7_151_150_1",
+    "price": "£14.69",
+    "release_date": "3 Sep, 2020",
+    "reviews": "Overwhelmingly Positive",
+    "tags": [
+      "Character Action Game",
+      "Fast-Paced",
+      "FPS",
+      "Blood",
+      "Spectacle fighter"
+    ]
+  },
+  {
     "title": "Kingdom of Doom",
     "link": "https://store.steampowered.com/app/2717440/Kingdom_of_Doom/?snr=1_7_7_151_150_1",
     "price": "",
@@ -288,20 +302,6 @@
       "Action-Adventure",
       "Action RPG",
       "3D Platformer"
-    ]
-  },
-  {
-    "title": "ULTRAKILL",
-    "link": "https://store.steampowered.com/app/1229490/ULTRAKILL/?snr=1_7_7_151_150_1",
-    "price": "£14.69",
-    "release_date": "3 Sep, 2020",
-    "reviews": "Overwhelmingly Positive",
-    "tags": [
-      "Character Action Game",
-      "Fast-Paced",
-      "FPS",
-      "Blood",
-      "Spectacle fighter"
     ]
   },
   {
@@ -367,6 +367,21 @@
     ]
   },
   {
+    "title": "Tunnel of Doom",
+    "link": "https://store.steampowered.com/app/1361840/Tunnel_of_Doom/?snr=1_7_7_151_150_1",
+    "price": "£3.29",
+    "release_date": "23 Nov, 2021",
+    "reviews": "Mixed",
+    "tags": [
+      "Dungeon Crawler",
+      "Tower Defense",
+      "Rogue-lite",
+      "Perma Death",
+      "Action RPG",
+      "Action-Adventure"
+    ]
+  },
+  {
     "title": "Shroom & Doom",
     "link": "https://store.steampowered.com/app/2491690/Shroom__Doom/?snr=1_7_7_151_150_1",
     "price": "Free",
@@ -380,21 +395,6 @@
       "Shooter",
       "2D",
       "Top-Down"
-    ]
-  },
-  {
-    "title": "Tunnel of Doom",
-    "link": "https://store.steampowered.com/app/1361840/Tunnel_of_Doom/?snr=1_7_7_151_150_1",
-    "price": "£3.29",
-    "release_date": "23 Nov, 2021",
-    "reviews": "Mixed",
-    "tags": [
-      "Dungeon Crawler",
-      "Tower Defense",
-      "Rogue-lite",
-      "Perma Death",
-      "Action RPG",
-      "Action-Adventure"
     ]
   },
   {
@@ -651,22 +651,6 @@
     ]
   },
   {
-    "title": "Tower of Doom",
-    "link": "https://store.steampowered.com/app/1509840/Tower_of_Doom/?snr=1_7_7_151_150_1",
-    "price": "£11.39",
-    "release_date": "29 Jul, 2021",
-    "reviews": "",
-    "tags": [
-      "Action",
-      "Arcade",
-      "VR",
-      "Shooter",
-      "Survival",
-      "Gun Customization",
-      "Bullet Hell"
-    ]
-  },
-  {
     "title": "The Haunted House of Doom",
     "link": "https://store.steampowered.com/app/781920/The_Haunted_House_of_Doom/?snr=1_7_7_151_150_1",
     "price": "£2.89",
@@ -680,6 +664,22 @@
       "Exploration",
       "Strategy",
       "Colorful"
+    ]
+  },
+  {
+    "title": "Tower of Doom",
+    "link": "https://store.steampowered.com/app/1509840/Tower_of_Doom/?snr=1_7_7_151_150_1",
+    "price": "£11.39",
+    "release_date": "29 Jul, 2021",
+    "reviews": "",
+    "tags": [
+      "Action",
+      "Arcade",
+      "VR",
+      "Shooter",
+      "Survival",
+      "Gun Customization",
+      "Bullet Hell"
     ]
   },
   {
@@ -709,6 +709,19 @@
     ]
   },
   {
+    "title": "Masquerade: The Baubles of Doom",
+    "link": "https://store.steampowered.com/app/299380/Masquerade_The_Baubles_of_Doom/?snr=1_7_7_151_150_1",
+    "price": "£9.99",
+    "release_date": "20 Apr, 2016",
+    "reviews": "Mostly Positive",
+    "tags": [
+      "Action",
+      "Adventure",
+      "Indie",
+      "Casual"
+    ]
+  },
+  {
     "title": "Theatre of Doom",
     "link": "https://store.steampowered.com/app/553020/Theatre_of_Doom/?snr=1_7_7_151_150_1",
     "price": "£8.50",
@@ -722,19 +735,6 @@
       "Arcade",
       "Arena Shooter",
       "Singleplayer"
-    ]
-  },
-  {
-    "title": "Masquerade: The Baubles of Doom",
-    "link": "https://store.steampowered.com/app/299380/Masquerade_The_Baubles_of_Doom/?snr=1_7_7_151_150_1",
-    "price": "£9.99",
-    "release_date": "20 Apr, 2016",
-    "reviews": "Mostly Positive",
-    "tags": [
-      "Action",
-      "Adventure",
-      "Indie",
-      "Casual"
     ]
   }
 ]
