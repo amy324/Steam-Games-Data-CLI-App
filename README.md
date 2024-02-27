@@ -286,7 +286,7 @@ This program ensures compliance with the [Steam Data Terms of Use](https://steam
    - This program does not collect or store any user information. 
 
 3. **Data Handling:**
-   - Steam Data is stored in countries identified in the privacy policy. The program treats Steam Data with disclaimers substantially equivalent to those specified in Sections 7 and 8 of the Steam Data Terms of Use. It provides Steam Data "as is", with it purpose only being the retrieval of public games information.
+   - Steam Data is stored in countries identified in the privacy policy. The program treats Steam Data with disclaimers substantially equivalent to those specified in Sections 7 and 8 of the Steam Data Terms of Use. It provides Steam Data "as is", with its purpose only being the retrieval of public games information.
 
 4. **Endorsement and Affiliation:**
    - The program does not present Steam Data in a manner that suggests endorsement or affiliation with Valve or Steam.
