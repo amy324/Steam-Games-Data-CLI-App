@@ -1,6 +1,7 @@
 package main
 
 import (
+	"bufio"
 	"bytes"
 	"encoding/csv"
 	"encoding/json"
@@ -8,10 +9,13 @@ import (
 	"io/ioutil"
 	"net/http"
 	"os"
+	"os/exec"
 	"regexp"
+	//"runtime"
 	"strings"
 
 	"github.com/PuerkitoBio/goquery"
+	"github.com/fatih/color"
 	"github.com/spf13/cobra"
 )
 
@@ -28,7 +32,10 @@ type Game struct {
 // TagsMap represents the structure of the tags JSON file
 type TagsMap map[string]string
 
+
 func main() {
+	color.Cyan("Welcome to Steam Scraper!")
+	color.Cyan("----------------------------")
 	rootCmd := &cobra.Command{
 		Use:   "steam-scraper",
 		Short: "Scrape game data from Steam",
@@ -41,6 +48,10 @@ func main() {
 		fmt.Println(err)
 		os.Exit(1)
 	}
+
+	// Wait for user input before closing the window
+	fmt.Print("Press Enter to exit...")
+	fmt.Scanln()
 }
 
 func scrape() {
@@ -90,7 +101,7 @@ func scrape() {
 		// Output data to JSON file
 		jsonFile, err := os.Create("resultfiles/games.json")
 		if err != nil {
-			fmt.Println("Error creating JSON file:", err)
+			color.Red("Error creating JSON file:", err)
 			return
 		}
 		defer jsonFile.Close()
@@ -100,11 +111,16 @@ func scrape() {
 		jsonEncoder.SetEscapeHTML(false) // Prevent escaping HTML characters
 		err = jsonEncoder.Encode(games)
 		if err != nil {
-			fmt.Println("Error encoding JSON:", err)
+			color.Red("Error encoding JSON:", err)
 			return
 		}
 
-		fmt.Println("JSON file created successfully.")
+		color.Green("JSON file created successfully.")
+		
+		color.Green("CSV file created successfully.")
+		
+		openFile("resultfiles/games.csv", "CSV")
+
 
 		// Output data to CSV file
 		csvFile, err := os.Create("resultfiles/games.csv")
@@ -120,7 +136,7 @@ func scrape() {
 		// Write CSV header
 		err = csvWriter.Write([]string{"Title", "Link", "Price", "Release Date", "Reviews", "Tags"})
 		if err != nil {
-			fmt.Println("Error writing CSV header:", err)
+			color.Red("Error writing CSV header:", err)
 			return
 		}
 
@@ -135,11 +151,10 @@ func scrape() {
 			}
 		}
 
-		fmt.Println("CSV file created successfully.")
 
 		// Prompt user to select a game for additional details
 		var input string
-		fmt.Print("Enter the title or link of the game for additional details: ")
+		fmt.Print("Enter the link of the game from your JSON/CSV file for additional details: ")
 		fmt.Scanln(&input)
 
 		// Find the game in the JSON file
@@ -152,13 +167,13 @@ func scrape() {
 		}
 
 		if selectedGame == nil {
-			fmt.Println("Game not found.")
+			color.Red("Game not found.")
 			continue
 		}
 
 		// Scrape additional details from the selected game's link
 		if err := scrapeAdditionalDetails(selectedGame, birthtime); err != nil {
-			fmt.Println("Error scraping additional details:", err)
+			color.Red("Error scraping additional details:", err)
 			continue
 		}
 	}
@@ -285,13 +300,17 @@ func scrapeAdditionalDetails(game *Game, birthtime string) error {
 	description := strings.TrimSpace(doc.Find(".game_description_snippet").Text())
 	description = strings.ReplaceAll(description, "\n", " ") // Remove newlines
 
-	fmt.Println("Developer:", developer)
-	fmt.Println("Publisher:", publisher)
-	fmt.Println("Description:", description)
+	// Print titles with emphasis
+	fmt.Println("\nDeveloper:")
+	fmt.Println(developer)
+	fmt.Println("\nPublisher:")
+	fmt.Println(publisher)
+	fmt.Println("\nDescription:")
+	fmt.Println(description)
 
 	// Ask the user if they want to see system requirements
 	var showSysReqs string
-	fmt.Print("Do you want to see system requirements? (yes/no): ")
+	fmt.Print("\nDo you want to see system requirements? (yes/no): ")
 	fmt.Scanln(&showSysReqs)
 
 	if strings.ToLower(showSysReqs) == "yes" {
@@ -306,12 +325,45 @@ func scrapeAdditionalDetails(game *Game, birthtime string) error {
 			systemRequirements = strings.TrimSpace(systemRequirements)            // Trim leading and trailing spaces
 			// Replace multiple spaces with a single space
 			systemRequirements = regexp.MustCompile(`\s+`).ReplaceAllString(systemRequirements, " ")
-			fmt.Println("System Requirements:", systemRequirements)
+			// Print system requirements with distinct formatting
+			fmt.Println("\nSystem Requirements:")
+			fmt.Println(systemRequirements)
+			fmt.Println() // Extra newline
 		} else {
-			fmt.Println("System requirements not found.")
+			fmt.Println("\nSystem requirements not found.")
 		}
 	}
 
 	return nil
+}
+// Function to open file
+func openFile(filepath string, fileType string) {
+    var cmd *exec.Cmd
+
+    reader := bufio.NewReader(os.Stdin)
+    fmt.Printf("Do you want to open the %s file? (yes/no): ", fileType)
+    input, err := reader.ReadString('\n')
+    if err != nil {
+        fmt.Println("Error reading input:", err)
+        return
+    }
+
+    input = strings.ToLower(strings.TrimSpace(input))
+    if input == "yes" || input == "y" {
+        switch fileType {
+        case "CSV":
+            cmd = exec.Command("cmd", "/c", "start", filepath) // For Windows
+        default:
+            fmt.Println("Unsupported file type")
+            return
+        }
+
+        if cmd != nil {
+            err := cmd.Run()
+            if err != nil {
+                fmt.Println("Error opening file:", err)
+            }
+        }
+    }
 }
 
