@@ -206,58 +206,58 @@ func promptAdditionalDetails(games []Game, reader *bufio.Reader, birthtime strin
     return nil
 }
 
-
 func openResults(jsonFilePath, csvFilePath string) bool {
-	var cmd *exec.Cmd
+    var cmd *exec.Cmd
 
-	reader := bufio.NewReader(os.Stdin)
-	fmt.Printf("Do you want to open the results? (Type 'J' to open JSON, 'C' to open CSV, or 'next' to move on): ")
-	input, err := reader.ReadString('\n')
-	if err != nil {
-		fmt.Println("Error reading input:", err)
-		return false
-	}
+    reader := bufio.NewReader(os.Stdin)
+    fmt.Printf("Do you want to open the results? (Type 'J' to open JSON, 'C' to open CSV, or 'next' to move on): ")
+    input, err := reader.ReadString('\n')
+    if err != nil {
+        fmt.Println("Error reading input:", err)
+        return false
+    }
 
-	input = strings.ToLower(strings.TrimSpace(input))
-	switch input {
-	case "j":
-		cmd = exec.Command("notepad", jsonFilePath) // Open JSON file with Notepad
-	case "c":
-		cmd = exec.Command("cmd", "/c", "start", csvFilePath) // Open CSV file with default program
-	case "next":
-		fmt.Println("Moving on to the next operation.")
-		return true // Return true when user selects 'next'
-	default:
-		fmt.Println("Unsupported input.")
-		return false
-	}
+    input = strings.ToLower(strings.TrimSpace(input))
+    switch input {
+    case "j":
+        cmd = exec.Command("notepad", jsonFilePath) // Open JSON file with Notepad
+    case "c":
+        cmd = exec.Command("cmd", "/c", "start", "excel", csvFilePath) // Open CSV file
+    case "next":
+        fmt.Println("Moving on to the next operation.")
+        return true // Return true when user selects 'next'
+    default:
+        fmt.Println("Unsupported input.")
+        return false
+    }
 
-	// Run the command to open the file
-	if cmd != nil {
-		if err := cmd.Start(); err != nil {
-			fmt.Println("Error opening file:", err)
-			return false
-		}
-		fmt.Println("File opened successfully.")
+    // Run the command to open the file
+    if cmd != nil {
+        if err := cmd.Start(); err != nil {
+            fmt.Println("Error opening file:", err)
+            return false
+        }
+        fmt.Println("File opened successfully.")
 
-		// Wait for the user to explicitly type 'next' to continue
-		for {
-			fmt.Print("Type 'next' to move on: ")
-			input, err := reader.ReadString('\n')
-			if err != nil {
-				fmt.Println("Error reading input:", err)
-				return false
-			}
-			input = strings.ToLower(strings.TrimSpace(input))
-			if input == "next" {
-				fmt.Println("Moving on to the next operation.")
-				return true
-			}
-		}
-	}
+        // Wait for the user to explicitly type 'next' to continue
+        for {
+            fmt.Print("Type 'next' to move on: ")
+            input, err := reader.ReadString('\n')
+            if err != nil {
+                fmt.Println("Error reading input:", err)
+                return false
+            }
+            input = strings.ToLower(strings.TrimSpace(input))
+            if input == "next" {
+                fmt.Println("Moving on to the next operation.")
+                return true
+            }
+        }
+    }
 
-	return false
+    return false
 }
+
 
 func scrapePage(url string, tags TagsMap) ([]Game, error) {
 	// Make HTTP request
