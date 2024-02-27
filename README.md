@@ -87,7 +87,7 @@ The purpose of this application is to provide users with a streamlined way to ac
 
 Below is a step-by-step guide on how to use the program after compiling it with `go build` and opening the executable file (steam-scraper.exe) via `cmd.exe`. The below demonstration was performed on a Windows 11 PC. See [Compatibility](#compatibility) for more details.
 
-My favorite video games include id's Software *DOOM* franchise, so this example uses the keyword "doom":
+My favorite video games include id Software's *DOOM* franchise, so this example uses the keyword "doom":
 
 ```cmd
 Welcome to Steam Scraper!
