@@ -139,7 +139,8 @@ Publisher:
 Bethesda Softworks
 
 Description:
-Now includes all three premium DLC packs (Unto the Evil, Hell Followed, and Bloodfall), maps, modes, and weapons, as well as all feature updates including Arcade Mode, Photo Mode, and the latest Update 6.66, which brings further multiplayer improvements as well as revamps multiplayer progression.
+Now includes all three premium DLC packs (Unto the Evil, Hell Followed, and Bloodfall), maps, modes, and weapons, as well as all feature updates including Arcade Mode, Photo Mode, and the latest Update 6.66,
+which brings further multiplayer improvements as well as revamps multiplayer progression.
 
 Do you want to see system requirements? (yes/no): yes
 
