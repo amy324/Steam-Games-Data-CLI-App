@@ -85,7 +85,9 @@ The purpose of this application is to provide users with a streamlined way to ac
 
 ## Usage Walkthrough
 
-Below is a step-by-step guide on how to use the program after compiling it with `go build` and opening the executable file via `cmd.exe`.
+Below is a step-by-step guide on how to use the program after compiling it with `go build` and opening the executable file (steam-scraper.exe) via `cmd.exe`. The below demonstration was performed on a Windows 11 PC. See [compatability](#compatability) for more details.
+
+My favorite video games include id's Software *Doom* franchise, so this example uses the keyword "doom":
 
 ```cmd
 Welcome to Steam Scraper!
@@ -96,6 +98,8 @@ Do you want to open the results? (Type 'J' to open JSON, 'C' to open CSV, or 'ne
 File opened successfully.
 Type 'next' to move on:
 ```
+
+This triggered the app to scrape the following url: "https://store.steampowered.com/search/?term=doom".
 
 Both JSON and CSV files were created and saved as `resultfiles\games.csv` and `resultfiles\games.json`.
 
@@ -120,7 +124,7 @@ In the example above, I chose to open the JSON file by typing `J`, which contain
 }
 ```
 
-After typing `next` to proceed, the program prompted for a game link for additional details. Using the link from the previous example, the program fetched additional details including developer, publisher, and description:
+After typing `next` to proceed, the program prompted for a game link for additional details. Using the link as seen in the above JSON snippet, the program fetched additional details including developer, publisher, and description:
 
 ```cmd
 Type 'next' to move on: next
@@ -161,7 +165,7 @@ Additional Notes: Requires Steam activation and broadband internet connection fo
 
 Enter the game keyword you want to search (or 'quit' to exit):
 ```
-
+Upon answering "yes" when prompted to view system requirements, the app then retrieved this information, as you can see above.
 
 
 ## Code Explanation
@@ -181,7 +185,7 @@ The codebase is organized into several files and functions:
    - Scrapes data from the Steam store based on the user's keyword input.
    - Outputs the scraped data to JSON and CSV files.
    - Prompts the user to open the results and continues to the next operation.
-   - Utilizes the `birthtime` environmental variable to bypass age verification on the Steam website. This variable should be set to the user's birthdate and is sent as a cookie in the HTTP request headers to access age-restricted content, eg: the game used in the walkthrough above, *Doom*, requires age verification to search for due to violent content in the game. 
+   - Utilizes the `birthtime` environmental variable to bypass age verification on the Steam website. This variable should be set to the user's birthdate and is sent as a cookie in the HTTP request headers to access age-restricted content, eg: the game used in the walkthrough above, *DOOM (2016)*, requires age verification to search for due to violent content in the game. 
 
 3. **Additional Details Prompt Function (`promptAdditionalDetails`):**
    - Prompts the user to input a link for additional details of a specific game.
