@@ -87,7 +87,7 @@ The purpose of this application is to provide users with a streamlined way to ac
 
 Below is a step-by-step guide on how to use the program after compiling it with `go build` and opening the executable file (steam-scraper.exe) via `cmd.exe`. The below demonstration was performed on a Windows 11 PC. See [compatability](#compatability) for more details.
 
-My favorite video games include id's Software *Doom* franchise, so this example uses the keyword "doom":
+My favorite video games include id's Software *DOOM* franchise, so this example uses the keyword "doom":
 
 ```cmd
 Welcome to Steam Scraper!
@@ -99,7 +99,7 @@ File opened successfully.
 Type 'next' to move on:
 ```
 
-This triggered the app to scrape the following url: "https://store.steampowered.com/search/?term=doom".
+This triggered the app to scrape the following url: https://store.steampowered.com/search/?term=doom.
 
 Both JSON and CSV files were created and saved as `resultfiles\games.csv` and `resultfiles\games.json`.
 
