@@ -244,7 +244,7 @@ The codebase is organized into several files and functions:
 
 - **Tags JSON File (`tags.json`):**
   - This file contains a mapping of tag IDs to tag names. Each entry in the JSON file represents a tag ID with its corresponding name.
-  - Information relating to tag IDs from https://store.steampowered.com/tagdata/populartags/english
+  - Information relating to tag IDs was taken from https://store.steampowered.com/tagdata/populartags/english.
   - For example:
    ```json
     {
