@@ -253,7 +253,7 @@ The codebase is organized into several files and functions:
     "1673": "Aliens",
     }
     ```
-  - In the example game used in the walkthrough above (*DOOM (2016)*), the HTML on https://store.steampowered.com/search/?term=doom for this partciular game includes :
+  - In the example game used in the walkthrough above, *DOOM (2016)*, the HTML on https://store.steampowered.com/search/?term=doom for this partciular game includes :
     
     ```html
     data-ds-tagids="[1663,4345,19,1774,9541,1756,3839]"
