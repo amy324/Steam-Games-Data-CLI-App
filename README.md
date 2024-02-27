@@ -27,10 +27,9 @@ The purpose of this application is to provide users with a streamlined way to ac
 
 ## Features
 
-- **Game Data Retrieval**: The application scrapes data from the Steam store website, including game titles, prices, release dates, reviews, and tags.
-- **User Interaction**: Users can interact with the application through a command-line interface (CLI), providing keywords to search for specific games and selecting actions such as opening JSON or CSV files.
+- **Game Data Retrieval**: The application scrapes data from the Steam store website, including game titles, prices, release dates, reviews, and tags. It exports this data to both a JSON and CSV file as `games.csv` and `games.json`, respectively. This allows for further analysis or integration with other tools.
+- **User Interaction**: Users can interact with the application through a command-line interface (CLI), providing keywords to search for specific games and selecting actions such as opening JSON or CSV files directly from the command-line.
 - **Detailed Information**: Users can access detailed information about individual games, including developer, publisher, description, and system requirements.
-- **Customizable Output:** The application allows users to export retrieved data in both JSON and CSV formats for further analysis or integration with other tools.
 - **Additional Details**: Prompt the user to input a game link for scraping additional details such as developer, publisher, description, and system requirements.
 - **Compliance**: The application ensures compliance with the Steam Data Terms of Use, respecting user privacy and data handling practices outlined by Valve Corporation.
 
