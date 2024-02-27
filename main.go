@@ -1,53 +1,55 @@
 package main
 
 import (
-	"bufio"
-	"bytes"
-	"encoding/csv"
-	"encoding/json"
-	"fmt"
-	"io/ioutil"
-	"net/http"
-	"os"
-	"os/exec"
-	"regexp"
+    "bufio"
+    "bytes"
+    "encoding/csv"
+    "encoding/json"
+    "fmt"
+    "io/ioutil"
+    "net/http"
+    "os"
+    "os/exec"
+    "regexp"
+    "strings"
 
-	//"runtime"
-	"strings"
-
-	"github.com/PuerkitoBio/goquery"
-	"github.com/fatih/color"
-	"github.com/spf13/cobra"
+    "github.com/PuerkitoBio/goquery"
+    "github.com/fatih/color"
+    "github.com/spf13/cobra"
 )
 
 // Game struct represents the data structure for each game
 type Game struct {
-	Title       string   `json:"title"`
-	Link        string   `json:"link"`
-	Price       string   `json:"price"`
-	ReleaseDate string   `json:"release_date"`
-	Reviews     string   `json:"reviews"`
-	Tags        []string `json:"tags"`
+    Title       string   `json:"title"`         // Title of the game
+    Link        string   `json:"link"`          // URL link to the game
+    Price       string   `json:"price"`         // Price of the game
+    ReleaseDate string   `json:"release_date"`  // Release date of the game
+    Reviews     string   `json:"reviews"`       // Summary of reviews for the game
+    Tags        []string `json:"tags"`          // Tags associated with the game
 }
 
 // TagsMap represents the structure of the tags JSON file
 type TagsMap map[string]string
 
 func main() {
-	color.Cyan("Welcome to Steam Scraper!")
-	color.Cyan("----------------------------")
-	rootCmd := &cobra.Command{
-		Use:   "steam-scraper",
-		Short: "Scrape game data from Steam",
-		Run: func(cmd *cobra.Command, args []string) {
-			scrape()
-		},
-	}
+    // Display welcome message
+    color.Cyan("Welcome to Steam Scraper!")
+    color.Cyan("----------------------------")
 
-	if err := rootCmd.Execute(); err != nil {
-		fmt.Println(err)
-		os.Exit(1)
-	}
+    // Define root command for the CLI tool
+    rootCmd := &cobra.Command{
+        Use:   "steam-scraper",
+        Short: "Scrape game data from Steam",
+        Run: func(cmd *cobra.Command, args []string) {
+            scrape() // Execute the scrape function
+        },
+    }
+
+    // Execute the root command
+    if err := rootCmd.Execute(); err != nil {
+        fmt.Println(err)
+        os.Exit(1)
+    }
 }
 
 func scrape() {
@@ -171,6 +173,7 @@ func scrape() {
     }
 }
 
+// promptAdditionalDetails prompts the user to input a link for additional details of a game
 func promptAdditionalDetails(games []Game, reader *bufio.Reader, birthtime string) error {
     fmt.Print("Enter the link of the game from your JSON/CSV file for additional details (or 'quit' to exit): ")
     input, err := reader.ReadString('\n')
@@ -206,6 +209,7 @@ func promptAdditionalDetails(games []Game, reader *bufio.Reader, birthtime strin
     return nil
 }
 
+// openResults opens the JSON or CSV files based on user input
 func openResults(jsonFilePath, csvFilePath string) bool {
     var cmd *exec.Cmd
 
@@ -222,7 +226,7 @@ func openResults(jsonFilePath, csvFilePath string) bool {
     case "j":
         cmd = exec.Command("notepad", jsonFilePath) // Open JSON file with Notepad
     case "c":
-        cmd = exec.Command("cmd", "/c", "start", "excel", csvFilePath) // Open CSV file
+        cmd = exec.Command("cmd", "/c", "start", "excel", csvFilePath) // Open CSV file with Excel
     case "next":
         fmt.Println("Moving on to the next operation.")
         return true // Return true when user selects 'next'
@@ -237,7 +241,7 @@ func openResults(jsonFilePath, csvFilePath string) bool {
             fmt.Println("Error opening file:", err)
             return false
         }
-        fmt.Println("File opened successfully.")
+        color.Green("File opened successfully.")
 
         // Wait for the user to explicitly type 'next' to continue
         for {
@@ -249,7 +253,7 @@ func openResults(jsonFilePath, csvFilePath string) bool {
             }
             input = strings.ToLower(strings.TrimSpace(input))
             if input == "next" {
-                fmt.Println("Moving on to the next operation.")
+                color.Green("Moving on to the next operation.")
                 return true
             }
         }
@@ -258,161 +262,146 @@ func openResults(jsonFilePath, csvFilePath string) bool {
     return false
 }
 
-
+// scrapePage scrapes game data from a given URL and returns a slice of Game structs
 func scrapePage(url string, tags TagsMap) ([]Game, error) {
-	// Make HTTP request
-	resp, err := http.Get(url)
-	if err != nil {
-		return nil, fmt.Errorf("failed to make HTTP request: %v", err)
-	}
-	defer resp.Body.Close()
+    // Make HTTP request
+    resp, err := http.Get(url)
+    if err != nil {
+        return nil, fmt.Errorf("failed to make HTTP request: %v", err)
+    }
+    defer resp.Body.Close()
 
-	// Check if response status code is OK (200)
-	if resp.StatusCode != http.StatusOK {
-		return nil, fmt.Errorf("HTTP request failed with status code: %d", resp.StatusCode)
-	}
+    // Check if response status code is OK (200)
+    if resp.StatusCode != http.StatusOK {
+        return nil, fmt.Errorf("HTTP request failed with status code: %d", resp.StatusCode)
+    }
 
-	// Parse HTML document
-	doc, err := goquery.NewDocumentFromReader(resp.Body)
-	if err != nil {
-		return nil, fmt.Errorf("failed to parse HTML document: %v", err)
-	}
+    // Parse HTML document
+    doc, err := goquery.NewDocumentFromReader(resp.Body)
+    if err != nil {
+        return nil, fmt.Errorf("failed to parse HTML document: %v", err)
+    }
 
-	var games []Game
-	doc.Find("#search_resultsRows > a").Each(func(i int, s *goquery.Selection) {
-		title := s.Find(".title").Text()
-		link, _ := s.Attr("href") // Extract link directly from the anchor tag
-		price := s.Find(".col.search_price_discount_combined .discount_final_price").Text()
-		releaseDate := s.Find(".search_released").Text()
+    var games []Game
+    doc.Find("#search_resultsRows > a").Each(func(i int, s *goquery.Selection) {
+        // Extract game information from HTML elements
+        title := s.Find(".title").Text()
+        link, _ := s.Attr("href")
+        price := s.Find(".col.search_price_discount_combined .discount_final_price").Text()
+        releaseDate := s.Find(".search_released").Text()
+        reviewsSummary := ""
+        if tooltipHTML, exists := s.Find(".search_review_summary").Attr("data-tooltip-html"); exists {
+            parts := strings.Split(tooltipHTML, "<br>")
+            if len(parts) > 0 {
+                reviewsSummary = strings.TrimSpace(parts[0])
+            }
+        }
+        tagIDsStr, _ := s.Attr("data-ds-tagids")
+        tagIDs := strings.Split(strings.Trim(tagIDsStr, "[]"), ",")
+        var tagNames []string
+        for _, tagID := range tagIDs {
+            tagName, ok := tags[tagID]
+            if ok {
+                tagNames = append(tagNames, tagName)
+            }
+        }
 
-		// Extract review summary
-		reviewsSummary := ""
-		if tooltipHTML, exists := s.Find(".search_review_summary").Attr("data-tooltip-html"); exists {
-			// Split the HTML string by the <br> tag
-			parts := strings.Split(tooltipHTML, "<br>")
-			if len(parts) > 0 {
-				// Extract only the first part
-				reviewsSummary = strings.TrimSpace(parts[0])
-			}
-		}
+        // Create a Game struct and append it to the games slice
+        game := Game{
+            Title:       strings.TrimSpace(title),
+            Link:        link,
+            Price:       strings.TrimSpace(price),
+            ReleaseDate: strings.TrimSpace(releaseDate),
+            Reviews:     reviewsSummary,
+            Tags:        tagNames,
+        }
+        games = append(games, game)
+    })
 
-		// Extract tag IDs from HTML
-		tagIDsStr, _ := s.Attr("data-ds-tagids")
-		tagIDs := strings.Split(strings.Trim(tagIDsStr, "[]"), ",")
-
-		// Debug print for tag IDs extracted from HTML
-		// fmt.Println("Tag IDs from HTML for", title, ":", tagIDs)
-
-		// Print corresponding tag names from tags.json
-		// fmt.Println("Tag names for", title, ":")
-		var tagNames []string
-		for _, tagID := range tagIDs {
-			tagName, ok := tags[tagID]
-			if ok {
-				tagNames = append(tagNames, tagName)
-				// fmt.Println(tagName)
-			} else {
-				// fmt.Println("Tag name not found for ID:", tagID)
-			}
-		}
-
-		game := Game{
-			Title:       strings.TrimSpace(title),
-			Link:        link,
-			Price:       strings.TrimSpace(price),
-			ReleaseDate: strings.TrimSpace(releaseDate),
-			Reviews:     reviewsSummary,
-			Tags:        tagNames, // Assign tag names directly
-		}
-
-		games = append(games, game)
-	})
-
-	return games, nil
+    return games, nil
 }
 
+// scrapeAdditionalDetails scrapes additional details of a game from its URL
 func scrapeAdditionalDetails(game *Game, birthtime string) error {
-	fmt.Println("Scraping additional details from:", game.Link)
+    fmt.Println("Scraping additional details from:", game.Link)
 
-	// Create HTTP client with a cookie jar
-	client := &http.Client{}
+    // Create HTTP client with a cookie jar
+    client := &http.Client{}
 
-	// Create a request object
-	req, err := http.NewRequest("GET", game.Link, nil)
-	if err != nil {
-		return fmt.Errorf("failed to create HTTP request: %v", err)
-	}
+    // Create a request object
+    req, err := http.NewRequest("GET", game.Link, nil)
+    if err != nil {
+        return fmt.Errorf("failed to create HTTP request: %v", err)
+    }
 
-	// Set headers to bypass age verification
-	req.Header.Set("Cookie", fmt.Sprintf("birthtime=%s", birthtime)) // Use the birthtime value from environment
+    // Set headers to bypass age verification
+    req.Header.Set("Cookie", fmt.Sprintf("birthtime=%s", birthtime))
 
-	// Send the request
-	resp, err := client.Do(req)
-	if err != nil {
-		return fmt.Errorf("failed to make HTTP request: %v", err)
-	}
-	defer resp.Body.Close()
+    // Send the request
+    resp, err := client.Do(req)
+    if err != nil {
+        return fmt.Errorf("failed to make HTTP request: %v", err)
+    }
+    defer resp.Body.Close()
 
-	// Check if response status code is OK (200)
-	if resp.StatusCode != http.StatusOK {
-		return fmt.Errorf("HTTP request failed with status code: %d", resp.StatusCode)
-	}
+    // Check if response status code is OK (200)
+    if resp.StatusCode != http.StatusOK {
+        return fmt.Errorf("HTTP request failed with status code: %d", resp.StatusCode)
+    }
 
-	// Read HTML content
-	htmlContent, err := ioutil.ReadAll(resp.Body)
-	if err != nil {
-		return fmt.Errorf("failed to read HTML content: %v", err)
-	}
+    // Read HTML content
+    htmlContent, err := ioutil.ReadAll(resp.Body)
+    if err != nil {
+        return fmt.Errorf("failed to read HTML content: %v", err)
+    }
 
-	// Parse HTML document
-	doc, err := goquery.NewDocumentFromReader(bytes.NewReader(htmlContent))
-	if err != nil {
-		return fmt.Errorf("failed to parse HTML document: %v", err)
-	}
+    // Parse HTML document
+    doc, err := goquery.NewDocumentFromReader(bytes.NewReader(htmlContent))
+    if err != nil {
+        return fmt.Errorf("failed to parse HTML document: %v", err)
+    }
 
-	// Find developer
-	developer := doc.Find("#developers_list > a").Text()
+    // Find developer
+    developer := doc.Find("#developers_list > a").Text()
 
-	// Find publisher
-	publisher := doc.Find("#game_highlights > div.rightcol > div > div.glance_ctn_responsive_left > div:nth-child(4) > div.summary.column > a").Text()
+    // Find publisher
+    publisher := doc.Find("#game_highlights > div.rightcol > div > div.glance_ctn_responsive_left > div:nth-child(4) > div.summary.column > a").Text()
 
-	// Find description
-	description := strings.TrimSpace(doc.Find(".game_description_snippet").Text())
-	description = strings.ReplaceAll(description, "\n", " ") // Remove newlines
+    // Find description
+    description := strings.TrimSpace(doc.Find(".game_description_snippet").Text())
+    description = strings.ReplaceAll(description, "\n", " ")
 
-	// Print titles with emphasis
-	fmt.Println("\nDeveloper:")
-	fmt.Println(developer)
-	fmt.Println("\nPublisher:")
-	fmt.Println(publisher)
-	fmt.Println("\nDescription:")
-	fmt.Println(description)
+    // Print titles with emphasis
+    fmt.Println("\nDeveloper:")
+    fmt.Println(developer)
+    fmt.Println("\nPublisher:")
+    fmt.Println(publisher)
+    fmt.Println("\nDescription:")
+    fmt.Println(description)
 
-	// Ask the user if they want to see system requirements
-	var showSysReqs string
-	fmt.Print("\nDo you want to see system requirements? (yes/no): ")
-	fmt.Scanln(&showSysReqs)
+    // Ask the user if they want to see system requirements
+    var showSysReqs string
+    fmt.Print("\nDo you want to see system requirements? (yes/no): ")
+    fmt.Scanln(&showSysReqs)
 
-	if strings.ToLower(showSysReqs) == "yes" {
-		// Find system requirements section
-		sysReqSection := doc.Find(".game_page_autocollapse.sys_req")
-		if sysReqSection.Length() > 0 {
-			// Extract system requirements text
-			systemRequirements := strings.TrimSpace(sysReqSection.Find(".sysreq_contents").Text())
-			// Clean up system requirements text
-			systemRequirements = strings.ReplaceAll(systemRequirements, "\n", " ") // Remove newlines
-			systemRequirements = strings.ReplaceAll(systemRequirements, "  ", "")  // Remove excessive spaces
-			systemRequirements = strings.TrimSpace(systemRequirements)             // Trim leading and trailing spaces
-			// Replace multiple spaces with a single space
-			systemRequirements = regexp.MustCompile(`\s+`).ReplaceAllString(systemRequirements, " ")
-			// Print system requirements with distinct formatting
-			fmt.Println("\nSystem Requirements:")
-			fmt.Println(systemRequirements)
-			fmt.Println() // Extra newline
-		} else {
-			fmt.Println("\nSystem requirements not found.")
-		}
-	}
+    if strings.ToLower(showSysReqs) == "yes" {
+        // Find system requirements section
+        sysReqSection := doc.Find(".game_page_autocollapse.sys_req")
+        if sysReqSection.Length() > 0 {
+            // Extract system requirements text
+            systemRequirements := strings.TrimSpace(sysReqSection.Find(".sysreq_contents").Text())
+            systemRequirements = strings.ReplaceAll(systemRequirements, "\n", " ")
+            systemRequirements = strings.ReplaceAll(systemRequirements, "  ", "")
+            systemRequirements = strings.TrimSpace(systemRequirements)
+            systemRequirements = regexp.MustCompile(`\s+`).ReplaceAllString(systemRequirements, " ")
+            // Print system requirements with distinct formatting
+            fmt.Println("\nSystem Requirements:")
+            fmt.Println(systemRequirements)
+            fmt.Println()
+        } else {
+            fmt.Println("\nSystem requirements not found.")
+        }
+    }
 
-	return nil
+    return nil
 }

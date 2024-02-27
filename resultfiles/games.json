@@ -276,20 +276,6 @@
     ]
   },
   {
-    "title": "ULTRAKILL",
-    "link": "https://store.steampowered.com/app/1229490/ULTRAKILL/?snr=1_7_7_151_150_1",
-    "price": "£14.69",
-    "release_date": "3 Sep, 2020",
-    "reviews": "Overwhelmingly Positive",
-    "tags": [
-      "Character Action Game",
-      "Fast-Paced",
-      "FPS",
-      "Blood",
-      "Spectacle fighter"
-    ]
-  },
-  {
     "title": "Kingdom of Doom",
     "link": "https://store.steampowered.com/app/2717440/Kingdom_of_Doom/?snr=1_7_7_151_150_1",
     "price": "",
@@ -302,6 +288,20 @@
       "Action-Adventure",
       "Action RPG",
       "3D Platformer"
+    ]
+  },
+  {
+    "title": "ULTRAKILL",
+    "link": "https://store.steampowered.com/app/1229490/ULTRAKILL/?snr=1_7_7_151_150_1",
+    "price": "£14.69",
+    "release_date": "3 Sep, 2020",
+    "reviews": "Overwhelmingly Positive",
+    "tags": [
+      "Character Action Game",
+      "Fast-Paced",
+      "FPS",
+      "Blood",
+      "Spectacle fighter"
     ]
   },
   {
@@ -639,34 +639,6 @@
     ]
   },
   {
-    "title": "DOOM Eternal: Cosplay Slayer Master Collection Cosmetic Pack",
-    "link": "https://store.steampowered.com/app/1626003/DOOM_Eternal_Cosplay_Slayer_Master_Collection_Cosmetic_Pack/?snr=1_7_7_151_150_1",
-    "price": "£3.99",
-    "release_date": "5 Aug, 2021",
-    "reviews": "Positive",
-    "tags": [
-      "Action",
-      "Gore",
-      "Violent"
-    ]
-  },
-  {
-    "title": "The Haunted House of Doom",
-    "link": "https://store.steampowered.com/app/781920/The_Haunted_House_of_Doom/?snr=1_7_7_151_150_1",
-    "price": "£2.89",
-    "release_date": "13 Oct, 2020",
-    "reviews": "Positive",
-    "tags": [
-      "Adventure",
-      "Horror",
-      "2D",
-      "Mystery",
-      "Exploration",
-      "Strategy",
-      "Colorful"
-    ]
-  },
-  {
     "title": "Tower of Doom",
     "link": "https://store.steampowered.com/app/1509840/Tower_of_Doom/?snr=1_7_7_151_150_1",
     "price": "£11.39",
@@ -697,6 +669,34 @@
     ]
   },
   {
+    "title": "The Haunted House of Doom",
+    "link": "https://store.steampowered.com/app/781920/The_Haunted_House_of_Doom/?snr=1_7_7_151_150_1",
+    "price": "£2.89",
+    "release_date": "13 Oct, 2020",
+    "reviews": "Positive",
+    "tags": [
+      "Adventure",
+      "Horror",
+      "2D",
+      "Mystery",
+      "Exploration",
+      "Strategy",
+      "Colorful"
+    ]
+  },
+  {
+    "title": "DOOM Eternal: Cosplay Slayer Master Collection Cosmetic Pack",
+    "link": "https://store.steampowered.com/app/1626003/DOOM_Eternal_Cosplay_Slayer_Master_Collection_Cosmetic_Pack/?snr=1_7_7_151_150_1",
+    "price": "£3.99",
+    "release_date": "5 Aug, 2021",
+    "reviews": "Positive",
+    "tags": [
+      "Action",
+      "Gore",
+      "Violent"
+    ]
+  },
+  {
     "title": "Fairly Certain Doom",
     "link": "https://store.steampowered.com/app/790170/Fairly_Certain_Doom/?snr=1_7_7_151_150_1",
     "price": "£1.69",
@@ -706,19 +706,6 @@
       "Adventure",
       "VR",
       "Drama"
-    ]
-  },
-  {
-    "title": "Masquerade: The Baubles of Doom",
-    "link": "https://store.steampowered.com/app/299380/Masquerade_The_Baubles_of_Doom/?snr=1_7_7_151_150_1",
-    "price": "£9.99",
-    "release_date": "20 Apr, 2016",
-    "reviews": "Mostly Positive",
-    "tags": [
-      "Action",
-      "Adventure",
-      "Indie",
-      "Casual"
     ]
   },
   {
@@ -736,5 +723,13 @@
       "Arena Shooter",
       "Singleplayer"
     ]
+  },
+  {
+    "title": "Road Doom Soundtrack",
+    "link": "https://store.steampowered.com/app/1961270/Road_Doom_Soundtrack/?snr=1_7_7_151_150_1",
+    "price": "£1.69",
+    "release_date": "17 Aug, 2022",
+    "reviews": "",
+    "tags": null
   }
 ]
