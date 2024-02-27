@@ -1,6 +1,6 @@
 # Steam Games Data CLI APP
 
-Steam Scraper is a command-line tool written in Go for scraping game data from the Steam store. This project utilizes web scraping, JSON and CSV file handling, concurrent HTTP requests, and command-line interface (CLI) implementation using Cobra.
+This app is a command-line tool written in Go for scraping game data from the Steam store. This project utilizes web scraping, JSON and CSV file handling, concurrent HTTP requests, and command-line interface (CLI) implementation using Cobra.
 
 ## Table of Contents
 
