@@ -291,20 +291,6 @@
     ]
   },
   {
-    "title": "ULTRAKILL",
-    "link": "https://store.steampowered.com/app/1229490/ULTRAKILL/?snr=1_7_7_151_150_1",
-    "price": "£14.69",
-    "release_date": "3 Sep, 2020",
-    "reviews": "Overwhelmingly Positive",
-    "tags": [
-      "Character Action Game",
-      "Fast-Paced",
-      "FPS",
-      "Blood",
-      "Spectacle fighter"
-    ]
-  },
-  {
     "title": "Doom & Destiny",
     "link": "https://store.steampowered.com/app/318130/Doom__Destiny/?snr=1_7_7_151_150_1",
     "price": "£8.99",
@@ -318,6 +304,20 @@
       "Comedy",
       "Fantasy",
       "Strategy"
+    ]
+  },
+  {
+    "title": "ULTRAKILL",
+    "link": "https://store.steampowered.com/app/1229490/ULTRAKILL/?snr=1_7_7_151_150_1",
+    "price": "£14.69",
+    "release_date": "3 Sep, 2020",
+    "reviews": "Overwhelmingly Positive",
+    "tags": [
+      "Character Action Game",
+      "Fast-Paced",
+      "FPS",
+      "Blood",
+      "Spectacle fighter"
     ]
   },
   {
@@ -367,21 +367,6 @@
     ]
   },
   {
-    "title": "Tunnel of Doom",
-    "link": "https://store.steampowered.com/app/1361840/Tunnel_of_Doom/?snr=1_7_7_151_150_1",
-    "price": "£3.29",
-    "release_date": "23 Nov, 2021",
-    "reviews": "Mixed",
-    "tags": [
-      "Dungeon Crawler",
-      "Tower Defense",
-      "Rogue-lite",
-      "Perma Death",
-      "Action RPG",
-      "Action-Adventure"
-    ]
-  },
-  {
     "title": "Shroom & Doom",
     "link": "https://store.steampowered.com/app/2491690/Shroom__Doom/?snr=1_7_7_151_150_1",
     "price": "Free",
@@ -395,6 +380,21 @@
       "Shooter",
       "2D",
       "Top-Down"
+    ]
+  },
+  {
+    "title": "Tunnel of Doom",
+    "link": "https://store.steampowered.com/app/1361840/Tunnel_of_Doom/?snr=1_7_7_151_150_1",
+    "price": "£3.29",
+    "release_date": "23 Nov, 2021",
+    "reviews": "Mixed",
+    "tags": [
+      "Dungeon Crawler",
+      "Tower Defense",
+      "Rogue-lite",
+      "Perma Death",
+      "Action RPG",
+      "Action-Adventure"
     ]
   },
   {
@@ -553,18 +553,6 @@
     ]
   },
   {
-    "title": "DOOM Eternal: Series One Cosmetic Pack",
-    "link": "https://store.steampowered.com/app/1460020/DOOM_Eternal_Series_One_Cosmetic_Pack/?snr=1_7_7_151_150_1",
-    "price": "£7.39",
-    "release_date": "29 Apr, 2021",
-    "reviews": "Positive",
-    "tags": [
-      "Action",
-      "Gore",
-      "Violent"
-    ]
-  },
-  {
     "title": "Days of Doom",
     "link": "https://store.steampowered.com/app/2258180/Days_of_Doom/?snr=1_7_7_151_150_1",
     "price": "£24.99",
@@ -594,6 +582,18 @@
       "Difficult",
       "Great Soundtrack",
       "Singleplayer"
+    ]
+  },
+  {
+    "title": "DOOM Eternal: Series One Cosmetic Pack",
+    "link": "https://store.steampowered.com/app/1460020/DOOM_Eternal_Series_One_Cosmetic_Pack/?snr=1_7_7_151_150_1",
+    "price": "£7.39",
+    "release_date": "29 Apr, 2021",
+    "reviews": "Positive",
+    "tags": [
+      "Action",
+      "Gore",
+      "Violent"
     ]
   },
   {
@@ -655,17 +655,15 @@
     ]
   },
   {
-    "title": "Ball of Doom",
-    "link": "https://store.steampowered.com/app/1284290/Ball_of_Doom/?snr=1_7_7_151_150_1",
-    "price": "£1.69",
-    "release_date": "18 Apr, 2020",
-    "reviews": "",
+    "title": "DOOM Eternal: Cosplay Slayer Master Collection Cosmetic Pack",
+    "link": "https://store.steampowered.com/app/1626003/DOOM_Eternal_Cosplay_Slayer_Master_Collection_Cosmetic_Pack/?snr=1_7_7_151_150_1",
+    "price": "£3.99",
+    "release_date": "5 Aug, 2021",
+    "reviews": "Positive",
     "tags": [
-      "Indie",
-      "Destruction",
-      "3D Platformer",
-      "Difficult",
-      "Pixel Graphics"
+      "Action",
+      "Gore",
+      "Violent"
     ]
   },
   {
@@ -685,15 +683,17 @@
     ]
   },
   {
-    "title": "DOOM Eternal: Cosplay Slayer Master Collection Cosmetic Pack",
-    "link": "https://store.steampowered.com/app/1626003/DOOM_Eternal_Cosplay_Slayer_Master_Collection_Cosmetic_Pack/?snr=1_7_7_151_150_1",
-    "price": "£3.99",
-    "release_date": "5 Aug, 2021",
-    "reviews": "Positive",
+    "title": "Ball of Doom",
+    "link": "https://store.steampowered.com/app/1284290/Ball_of_Doom/?snr=1_7_7_151_150_1",
+    "price": "£1.69",
+    "release_date": "18 Apr, 2020",
+    "reviews": "",
     "tags": [
-      "Action",
-      "Gore",
-      "Violent"
+      "Indie",
+      "Destruction",
+      "3D Platformer",
+      "Difficult",
+      "Pixel Graphics"
     ]
   },
   {
