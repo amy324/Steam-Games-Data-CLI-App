@@ -273,7 +273,7 @@ The codebase is organized into several files and functions:
 
 ## Compatibility
 
-- **Operating System**: This tool is primarily developed and tested on Windows environments.For best results, consider running the .exe file you compile from cmd.exe. While the core functionality should work on other platforms, the file opening mechanism may be Windows-specific. Compatibility with macOS and Linux is not guaranteed.
+- **Operating System**: This tool is primarily developed and tested on Windows environments. For best results, consider running the .exe file you compile (steam-scraper.exe) from cmd.exe. While the core functionality should work on other platforms, the file opening mechanism may be Windows-specific. Compatibility with macOS and Linux is not guaranteed.
 - **Dependencies**: Requires Go version 1.16 or higher and the `goquery` library. All dependencies are managed via Go Modules.
 
 ## Legal 
